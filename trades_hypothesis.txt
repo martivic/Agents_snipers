@@ -1,0 +1,73 @@
+ere are 10 data‑driven scenarios you can test based on the logs (stop‑loss losses,
+  long holds, partial behavior). Each is a rules + metric experiment.
+
+  1. Raise partial TP to reduce early exits
+      - Change: partial_take_profit_percentage: 0.50 → 0.65
+      - Hypothesis: fewer early partials → less BE stop‑outs
+      - Metric: % of trades hitting BE stop after partial
+  2. Sell more on partial to lock gains
+      - Change: partial_sell_fraction: 0.40 → 0.70
+      - Hypothesis: higher realized PnL before reversal
+      - Metric: realized PnL vs total PnL at exit
+  3. Disable move‑to‑breakeven
+      - Change: move_stop_to_breakeven: true → false
+      - Hypothesis: avoids immediate stop after partial, fewer quick losses
+      - Metric: avg hold time + avg loss %
+  4. Tighter stop‑loss for quick dumps
+      - Change: stop_loss_percentage: 0.15 → 0.08
+      - Hypothesis: cuts the large fast losses (8s–23s losses in logs)
+      - Metric: avg loss % & count of stop‑loss exits under 30s
+  5. Longer max hold only after partial
+      - Rule: if partial hits, extend max_hold_time (e.g., +180s)
+      - Hypothesis: gives runners more time; isolates flat max_hold exits
+      - Metric: avg PnL for partial‑hit trades
+  6. Shorter max hold when no partial
+      - Change: max_hold_time: 720 → 360 only if no partial
+      - Hypothesis: reduces long flat holds that end near 0%
+      - Metric: avg hold time + % max_hold exits
+  7. Raise take‑profit threshold
+      - Change: take_profit_percentage: 0.60 → 0.80
+      - Hypothesis: fewer full exits before larger move
+      - Metric: runner TP hit rate
+  8. Lower take‑profit threshold
+      - Change: take_profit_percentage: 0.60 → 0.45
+      - Hypothesis: more exits before reversals; reduces stop‑loss exits
+      - Metric: stop‑loss count vs TP count
+  9DONE. Volatility‑aware slippage
+      - Rule: if creator_sol < 2 or top_holder > 80%, set sell_slippage to 0.6
+      - Hypothesis: reduces 6003 sell failures on volatile tokens
+      - Metric: count of sell failures
+logs of change
+
+  Files changed
+
+  1. src/trading/platform_aware.py
+      - Added slippage_override to PlatformAwareSeller.execute(...)
+      - Uses override if provided, else default self.slippage
+  2. src/trading/universal_trader.py
+      - Added config fields:
+          - sell_slippage_risky
+          - risky_creator_sol_threshold
+          - risky_top_holder_pct
+      - Stores creator_sol + top_holder_pct in token_info.additional_data
+      - Computes slippage_override per trade and passes it to all sells
+      - New helper: _get_sell_slippage_override(...)
+  3. src/bot_runner.py
+      - Wires new YAML fields into UniversalTrader(...)
+  4. bots/bot-sniper-3-rug.yaml
+      - Added under trade::
+
+        sell_slippage_risky: 0.6
+        risky_creator_sol_threshold: 2.0
+        risky_top_holder_pct: 80.0
+
+  Behavior
+
+  - Default sell_slippage stays 0.5
+  - If creator_sol < 2.0 OR top_holder_pct > 80.0, sell slippage overrides to 0.6
+  - No extra RPC calls (uses existing rug-check data)
+
+  10. Time‑of‑day filter (from your logs)
+
+  - Rule: skip hours with worst avg PnL (11:00–12:00 in your data)
+  - Metric: avg PnL by hour after filter
