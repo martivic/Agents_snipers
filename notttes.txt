@@ -1,0 +1,11 @@
+# Configuration for the token to be created
+TOKEN_NAME = "Trump Penguin"
+TOKEN_SYMBOL = "TRUMPPENG"
+TOKEN_URI =  "https://artmakerai.vercel.app/metadata/artmakerai.json" #"https://artmakerai.vercel.app/artworks/01.png"
+BUY_AMOUNT_SOL = 0.000001  # Amount of SOL to spend on buying
+MAX_SLIPPAGE = 0.3  # 30% slippage
+PRIORITY_FEE_MICROLAMPORTS = 37_037  # Priority fee in microlamports
+COMPUTE_UNIT_LIMIT = 350_000  # Compute unit limit for the transaction
+ENABLE_MAYHEM_MODE = True  # Set to True to enable mayhem mode
+
+

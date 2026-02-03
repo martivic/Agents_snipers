@@ -1,0 +1,1910 @@
+Purpose
+Track conclusions and results from testing. Update only after test runs.
+
+Task 2 Results
+Run #1 (manual_buy.py):
+- Skipped several tokens due to top-holder threshold (> 90%).
+- Token: BOOB (Tap this to see), mint 5VApqGM51DD5PouZZ9FoYYzuPN1vvyhb84difLH7pump.
+- Buy tx: LNgBd596HkwLxpuUKs4QMo5JrMVDBoNXEn3bAaEtU4nGhzQ84syP4gW4xruptqAaNHJzPRPdKVBbq1xaBNt8Tc9.
+- Sell tx: 2jcjn86CBThsfoFM15PhXV1bNwa2CNQzhSksCJKHSWGTwn2t7TaS6ptdBLvahLU8UQhkBQhH55EYKgpti6wM8SMj.
+- Auto-sell confirmed; SSL transport "event loop is closed" error after completion.
+
+Run #2 (manual_buy.py):
+- Skipped several tokens due to top-holder threshold (> 90%).
+- Token: lopp, mint 9U1CwBNe3eepNn3245G91sU1mhv78ECFYJEXsCV5pump.
+- Top-holder check passed (77.63%), but skipped buy due to price cap:
+  0.0000000667 > MAX_PRICE_SOL 0.0000000500.
+- No buy/sell tx; SSL transport "event loop is closed" error after completion.
+
+Task 4 Attempt
+- PumpPortal listener ran for 10 minutes but failed to log trends.
+- Repeated error: 'charmap' codec can't encode character U+1F3AF.
+- No trend words captured; needs ASCII-safe logging before retry.
+
+Task 4 Results (PumpPortal trend scan)
+- Log: logs/pumpportal_trends_20260117_122948.log (10 min).
+- Tokens captured: 252 (UTF-16 log; parsed successfully).
+- Top words/themes (counts): live (31), shilling (26), dev (17), wojak (15),
+  obama (14), minister (14), miche (12), good (6), shit (6), tata (6), ath (6).
+- Top symbols (counts): GSD (26), OMARJAK (18), Jingle (16), WASB (14),
+  Miche (12), HAPPY (10), READ (6), FRINK (5), READTWEET (5), Back (3).
+- Repeated phrases: "We're So Back / It's So Over", "dev live shilling",
+  "TATA ATH 2M", "Wojak Minister", "Miche Obama".
+- Outlook: Favor trend-based themes around back/over cycles, dev-live-shill,
+  wojak/political names, and ATH-style phrasing for mint_and_buy_v2 metadata.
+
+Task 4 Results (PumpPortal trend scan #2)
+- Run length: 10 minutes (listener timed out after capture window).
+- New recurring themes spotted in output:
+  - Hex color codes: 14F195, 579BCA (multiple repeats).
+  - Bull/Bear motifs: "The White Bull", "The Brown Bear", "the bear", "Solana Bull".
+  - Market mood: "REKT", "We All Going Broke", "RETURN TO PUMP".
+  - Creator brands/memes: OnlyDevs, CoreView, CryptoFlashMeme.
+- Proposed next trend filter for Task 6: use "bear" (captures bear/bull cycle clones).
+
+Task 6 Run #1 (bot-sniper-3a-trends)
+- Launched via pump_bot; only bot-sniper-3a-trends enabled.
+- Observed UnicodeEncodeError from Windows console when token names included
+  non-ASCII symbols (e.g., "9945FF → 14F195").
+- No match/execute logs captured in the 4-minute window; process may have
+  continued after the CLI timeout.
+
+Task 2 Result (manual_buy auto-sell)
+- Mint: 9ZmmpXbCBFP73WDrW38B7VChQjxyKRYYvK9mk3Eipump (Mountains)
+- Buy tx: 3SPxHG5xsuCSUv1XUDF7r6qGFeDCyA3vmVj5pw486b3LggNT3QwcL7juTQViKoBKKUNbKPv6iEfeoRnmgeY3yb6a
+- Sell tx: 4KmJGb6GJ4QA4joyDBmocFtB8sFwCqYuMfEiLkmui3EGecAeKbTTMYwpNDBM2Xy9DNPKXk7rMvonqpMgz4pMMbAp
+- Net SOL change: -0.002080667 SOL (-2080667 lamports)
+- Note: SSL transport "event loop is closed" error after completion.
+
+Task 2 Result (manual_buy auto-sell)
+- Mint: 6RCdJUSYfjqtwXZD4GexjwKSgpAnVqeje4uGBHCopump (baby)
+- Buy tx: 3kHV2KTE4jiLhs47eBtNunEY5FAVgwdmbMDGijU2hGhNSCJvDp3zJRzh71pUymV4aSuJMEU4CWXDkqNBNwH8njtW
+- Sell: skipped (token balance 0.0)
+- Net SOL change: -0.000005403 SOL (-5403 lamports)
+- Note: SSL transport "event loop is closed" error after completion.
+
+Task 2 Result (manual_buy auto-sell)
+- Mint: HpHBViwVooMYrZKWsYQQVmdpVuSK8zCKeWbQFnc8pump (trump)
+- Buy tx: 3BNtv4HC8awP2pUp2j9wg7vvxjgGygjfX338gK1Y5L93QHAR4CPyGGnCmQRHoyUSJkjmVx8ofnUKko7LnLJdXiVR
+- Sell: skipped (token balance 0.0)
+- Net SOL change: -0.000005403 SOL (-5403 lamports)
+- Note: SSL transport "event loop is closed" error after completion.
+
+Task 2 Result (manual_buy auto-sell)
+- Mint: 7LgmXLLvXDFZmvRvpSqA5ufs8xTdGaqqi93mTk42pump (Allon bot)
+- Buy tx: 3YpJEuWxq5CtKJhzyFVAGmXau3ye2A214K6h6SemVHs25cRCH1Ss8cUgZrmQLZeUimH1VXxtDjuYN8MyYswxM97z
+- Sell: skipped (token balance 0.0)
+- Net SOL change: -0.000005403 SOL (-5403 lamports)
+- Note: SSL transport "event loop is closed" error after completion.
+
+Task 2 Result (manual_buy run batch - 3 runs)
+- Run 1: websocket closed (1009 message too big); no token processed.
+- Run 2: Mint 9A3qgQodu56D8KvuQdjPKP6foA4JzFkXeKF71WX2pump (Street King Leo)
+  Buy tx: 282WU8hVu6GpwXMyUn94xubPSyfz5HdaRixPy1YeHS1SsieVymRXHZjERC8Wmj6SbxpKjuvmNAwZqw8GDqKrfyJN
+  Buy status check errored (EncodedConfirmedTransaction meta access); no sell.
+- Run 3: Mint Gc8uhQK1HpGMynXbqHN6PcnYtfToP8p8XM86HjJvpump (whooo/ghost)
+  Buy tx: 2c7NbSLDzk1UVwZ5tm6QmqQEPoJPZBhrFiuDYMgexdx7sDBp7uBHtM1yMeWZxQtMcbP3ciWpkngwVhno6qb2fs25
+  Buy status check errored (EncodedConfirmedTransaction meta access); no sell.
+
+Task 2 Result (manual_buy run batch - 3 runs, buy=0.0001 SOL, sell slip=35%)
+- Run 1: Mint 6NBjKpezwJXVrxBmUtuwdr5znen2LsJSkG5bDL7cpump (2016/MTS)
+  Skipped buy: max SOL cost 0.0001300000 > cap 0.0000020000.
+- Run 2: Mint 6mbtMBuHgtNrmEyRdkZZQtiBxawNatSVaJP1eSBSpump (New love Cz)
+  Skipped buy: max SOL cost 0.0001300000 > cap 0.0000020000.
+- Run 3: Mint EEtHtWHUZW93QBYaJXGLHk4YXtBR7HcCdbuXLQmcpump (baby)
+  Skipped buy: max SOL cost 0.0001300000 > cap 0.0000020000.
+- Note: SSL transport "event loop is closed" after completion.
+
+Task 2 Result (manual_buy run batch - 3 runs, buy=0.0001 SOL, max cost cap 0.00015)
+- Run 1: Mint 54EN2dKy31MPgXdyHQAztFYbbFtAY2UkPUAxhuHipump (Bopity/BOOP)
+  Buy tx: 5n8VerHvjfKXwL5CxsmxYXPUD9XsojUnxtt4sz2V7MnYACb1gg4V3H1FxYwTiBcNTa9vG7V5GPkodHx5wbVYCWB2
+  Sell tx: 4nHcsxE8we1Pd3jT7iwnucrvgv9p3VENdaX8z9zC2CjSiWz6oTE3HUwnc1CsXPUaFmmhf8t5HY1RcaVLsVvg1Hvq
+  Net SOL change: -0.002168681 SOL (-2168681 lamports)
+- Run 2: Mint DY81FjzVUzEzSpTT53DnEg3NtFtBcGVdHNgnf3wppump (BLUEBONK/BB)
+  Buy tx: 5TK6Nsqz6ww4KRrdqgj4MmWtZKAJK25v9DYSC9Tc1rEiZqRb5wabvECtvZEbWRzJenVWe76rpUCQ6UcZsPTqtxC
+  Sell tx: 4qMMGA5cBSW16aErZS7Zxy9n2GVmkWrPGQ7XgkBfnfwdLjqsc2wLw5d8LDkcukXo3Auqt3wyE9y2MNvrjVV6vdq4
+  Net SOL change: -0.002198375 SOL (-2198375 lamports)
+- Run 3: Websocket closed (1009 message too big) after multiple skips; no token processed.
+- Note: SSL transport "event loop is closed" after completion.
+
+Task 2 Result (manual_buy run batch - 3 runs, hold=10s)
+- Run 1: Mint 5vvvadpUZbMyqX5tK4fYuMvXPRftaY1y916TVGTxpump (AIPumpFun)
+  Buy attempt failed due to RPC 429 while fetching fee recipient.
+- Run 2: Mint 3gcu1ZAWCnxuxuj8YSvTKfZX4JqEedZCnt3K5Qcapump (dead deer.)
+  Buy attempt failed due to RPC 429 while fetching latest blockhash.
+- Run 3: Mint HFCZefRaAR6KCdUGo5JeUTtYmV1WADmX9znQLaidpump (Kalaallit Coin)
+  Buy tx: 2PmoffMRNFhnMFtM7QN7z71TfqaoGB2tCC1Nbpq4Dr6uGUyQgQefvzdbEBbribndQ7JQxoMhEm8Fr3EUqS6RjySC
+  Sell tx: 2DGBFhJbkcaHydX6mkBQfpxHSHrbP4CXXefPknzXBFy8bbLSR9rE7qhGgsXc3txgSCTkQP6vMUuiAb9VHcoceSzU
+  Net SOL change: -0.002152044 SOL (-2152044 lamports)
+- Note: SSL transport "event loop is closed" after completion.
+
+Task 2 Result (manual_buy run batch - 3 runs, hold=10s, buy=0.0001 SOL)
+- Run 1: Mint 5vvvadpUZbMyqX5tK4fYuMvXPRftaY1y916TVGTxpump (AIPumpFun)
+  Buy attempt failed due to RPC 429 while fetching fee recipient.
+- Run 2: Mint 3gcu1ZAWCnxuxuj8YSvTKfZX4JqEedZCnt3K5Qcapump (dead deer.)
+  Buy attempt failed due to RPC 429 while fetching latest blockhash.
+- Run 3: Mint HFCZefRaAR6KCdUGo5JeUTtYmV1WADmX9znQLaidpump (Kalaallit Coin)
+  Buy tx: 2PmoffMRNFhnMFtM7QN7z71TfqaoGB2tCC1Nbpq4Dr6uGUyQgQefvzdbEBbribndQ7JQxoMhEm8Fr3EUqS6RjySC
+  Sell tx: 2DGBFhJbkcaHydX6mkBQfpxHSHrbP4CXXefPknzXBFy8bbLSR9rE7qhGgsXc3txgSCTkQP6vMUuiAb9VHcoceSzU
+  Net SOL change: -0.002152044 SOL (-2152044 lamports)
+- Note: SSL transport "event loop is closed" after completion.
+
+Task 2 Result (manual_buy auto-sell)
+- Mint: 9ZmmpXbCBFP73WDrW38B7VChQjxyKRYYvK9mk3Eipump
+- Net SOL change: -0.002080667 SOL (-2080667 lamports)
+
+Task 2 Result (manual_buy auto-sell)
+- Mint: LMumZNBrPH8ywpY6nxa6vyRf5xME7yg8q7zS21xpump
+- Net SOL change: -0.002080310 SOL (-2080310 lamports)
+
+Task 2 Result (manual_buy auto-sell)
+- Mint: Be23w6RLgfVFLqgdk5yrVLiHhxbrh68PpNpVCPYrpump
+- Net SOL change: -0.000005403 SOL (-5403 lamports)
+
+Task 2 Result (manual_buy auto-sell)
+- Mint: 6RCdJUSYfjqtwXZD4GexjwKSgpAnVqeje4uGBHCopump
+- Net SOL change: -0.000005403 SOL (-5403 lamports)
+
+Task 2 Result (manual_buy auto-sell)
+- Mint: HpHBViwVooMYrZKWsYQQVmdpVuSK8zCKeWbQFnc8pump
+- Net SOL change: -0.000005403 SOL (-5403 lamports)
+
+Task 2 Result (manual_buy auto-sell)
+- Mint: 7LgmXLLvXDFZmvRvpSqA5ufs8xTdGaqqi93mTk42pump
+- Net SOL change: -0.000005403 SOL (-5403 lamports)
+
+Task 2 Result (manual_buy auto-sell)
+- Mint: 5x9FydMJgGnHd491kjXA7g9EdW5gLiLxtwVEGag6pump
+- Net SOL change: -0.002080753 SOL (-2080753 lamports)
+
+Task 2 Result (manual_buy auto-sell)
+- Mint: 54EN2dKy31MPgXdyHQAztFYbbFtAY2UkPUAxhuHipump
+- Net SOL change: -0.002168681 SOL (-2168681 lamports)
+
+Task 2 Result (manual_buy auto-sell)
+- Mint: DY81FjzVUzEzSpTT53DnEg3NtFtBcGVdHNgnf3wppump
+- Net SOL change: -0.002198375 SOL (-2198375 lamports)
+
+Task 2 Result (manual_buy auto-sell)
+- Mint: 2kLxVo3sF8jbYAYPNEKwLe9mCgAxmyXDyjsPsDL6pump
+- Net SOL change: -0.002161993 SOL (-2161993 lamports)
+
+Task 2 Result (manual_buy auto-sell)
+- Mint: HFCZefRaAR6KCdUGo5JeUTtYmV1WADmX9znQLaidpump
+- Net SOL change: -0.002152044 SOL (-2152044 lamports)
+
+Task 2 Result (manual_buy auto-sell)
+- Mint: 6AHfAvmonJg7LwHJkTEhmSoGoF9nAvtGVTZ2TGi7mqwK
+- Net SOL change: -0.002206913 SOL (-2206913 lamports)
+
+Task 8 Result (bot-sniper-2a fee test)
+- Log: logs/bot-sniper-2a_20260117_213950.log
+- Ran ~21:39:50–21:57:14; detected many new tokens via logs listener.
+- No buy/sell actions occurred in this window (no trading.platform_aware entries).
+
+Task 2 Result (manual_buy auto-sell)
+- Mint: EqLtknczfMdiC8j1TEjk4Vda2Ltys46ehbB8vHS2pump
+- Net SOL change: -0.002083533 SOL (-2083533 lamports)
+
+Task 2 Result (manual_buy auto-sell)
+- Mint: 3UFqeChc7WAfuFp8MhZTAfQoX9TGmLuf8ueBeWvApump
+- Net SOL change: -0.002085452 SOL (-2085452 lamports)
+
+Task 3 Result (bot-sniper-3 blocks run)
+- Log: logs/bot-sniper-3_20260119_081618.log
+- Token: PLEASEBRO, mint FiQv8Y2mV33vAW3PoJYxnmFVD9hJM6aEWNAg8eZQpump
+- Buy tx: 4sJzjNR5syXP1PFPFCgcXtNM66WdtnPDv7yVDgwvkhPZeLxTnHwBnFAH5y4szBZQS13xTpe2Sz3fTrUMXUdRMjKq
+- Sell tx: WQbeeKxn6Qp3URzukY34kQqA8b7eAhsp7ZWGEUg5PSZNQp3nDQvvDMEVX9KXrAkepTmLuV2YQs9NbPPNwb1yJfB
+- Result: Buy/sell succeeded; ATA cleanup completed after sell.
+
+Task 3 Result (bot-sniper-3 blocks run)
+- Log: logs/bot-sniper-3_20260119_085753.log
+- Token: slowcook, mint 8GoMXg93TxxZMAq49p2HeczjqPcTSBpsS25g5x63pump
+- Buy tx: 4GyCjkYZurBiL25ErCyXPyySV8ohHndkbBHTo6mBWnKLnXvZogZEUFbuswZrvfiTgT522wUQgLfEhkJG2B5hSUwS
+- Sell tx: 2yxNMsZ2t73oMqg7jZ2ZieGxDmKJDm8oE83d7WSb3XK6SFgVLGWdLQVpy2obfbBiUj81zSetmCzB3QwWL6dizjiW
+- Buy fee: 0.000045 SOL (priority 0.00004 SOL), CU 79,267.
+- Sell fee: 0.000029 SOL (priority 0.000024 SOL), CU 49,391.
+- Result: Buy/sell succeeded; ATA cleanup completed after sell.
+
+Task 3 Result (bot-sniper-3 lowerfees run)
+- Log: logs/bot-sniper-3_20260119_091339.log
+- Token: PEPETEST, mint 5ijQq1qbyfY3h3uZ8rYaHrNBXokrjJXy9HDFFTiMpump
+- Buy tx: 5QFWqxpTzVcpeAMoN7D3hkgMyLFtr7E3Ao1ULrsu3bPvfGEdBGf4hp53KUFVz59xkdMKdTWLznD7HjW36dNkbNGE
+- Sell tx: RyWWeQqjd3AZq1NSGDhcVUJsrz6i5ZtkBsUCBEC77FzLdfAJp2H1TvenMbzHmKq7nDLqGwgAE2MdeQpYC3NzGAr
+- Buy fee: 0.000005 SOL (priority 0), CU 85,116.
+- Sell fee: 0.000005 SOL (priority 0), CU 47,739.
+- Result: Buy/sell succeeded; ATA cleanup completed after sell.
+
+Task 3 Result (bot-sniper-3 lowerfees run)
+- Log: logs/bot-sniper-3_20260119_092110.log
+- Token: SATWHALE, mint HxeqKTJPn74nd9gr8rZ9h95b9TZDS2y8uDaBuUtipump
+- Buy tx: 2MMHmfJCpFMR5Z18wvTNYo5kUurqVRixwsJmvumfvWKwyfPBKrKkWtwaX6yRCWSxuUBJQXb7urTmURHuHcoxC2FM
+- Sell tx: 3WpdJCRsMBzaAVaEjZCrDeXiNtDY4EE28ZcRqtbtMkRJkLn6F3n4zuUe6xXdtd4bwigi3LF2yVkJqKhbKvQgkCb6
+- Result: Buy/sell succeeded; ATA cleanup completed after sell.
+
+Task 3 Result (bot-sniper-3 tp/sl run)
+- Log: logs/bot-sniper-3_20260119_100040.log
+- Token: Leaving, mint GYc1hwX1gWjDgii3KCm7W6BdbcNcmjBrPRy1CXVspeHn
+- Buy tx: w2KMwj2jyTJATKRvRxFp88Ecy4Jyf79EXZxrT2uHaRtL9nRaAt1uFk9n4sxxMWxC3PVmhhLtpR7bxWU9VQnMNkA
+- Sell tx: 4LakWe2BnWwATGt84i4Hfe7ci5d1YdY7mHtFZypYtdm7Sj7i7SGpteTkPuYvTW4K7c5Ra1wBXPiLzygX56aFLkQM
+- Result: TP/SL not hit; exit on max_hold_time (20s); PnL ~0.00%.
+
+Task 3 Result (bot-sniper-3 lowerfeeshold run)
+- Log: logs/bot-sniper-3-lowerfeeshold_20260119_131024.log
+- Token: Drill, mint HJydajMXdgx5VvGZKuUNqq7EWXkrkX7J9CyH4XY9pump
+- Buy tx: 23RTaLx1saaRneXkMKPcsMAq6UWfnFp78UUTnupUKedfF9vEDiuYHNQ6AM7SGG17HgsAjXVrW2uDLCrCAiqgGtZP
+- Sell tx: 4FEACSTgZurkt4GRdTDrykG14cW7VWgPnZ2LBQDPNxuVF2mPT2fZcP5jrccT1LyVjFCsx3K6ziMGkwfMFAQgCnz9
+- Result: Exit on max_hold_time; PnL ~0.00%.
+
+Task 3 Result (bot-sniper-3 lowerfeeshold run)
+- Log: logs/bot-sniper-3-lowerfeeshold_20260119_131226.log
+- Token: WSHBLE, mint BgYWgSBVmWiq5JgUuh6AswpdPwHNeCwYEzmKKxeNpump
+- Buy tx: qMidJ2kA3xrMYHonrWfX4YzBgtXhdXxz5Etfy7bhPQVnz4BJ5C3k9RDKhHV4FSLjpGazzm8v3j85Ld2UExLyXjz
+- Sell tx: 15A9bqU2BzQB61XfUyQ4cgbArPgQyjms3H8sN7F23xcryutR9woT77MGhx6WEmmfZmE48TDZVXnBCeUxkjP9cXi
+- Result: Exit on max_hold_time; PnL ~0.00%.
+
+Task 3 Result (bot-sniper-3 lowerfeeshold run)
+- Log: logs/bot-sniper-3-lowerfeeshold_20260119_131403.log
+- Token: PNL, mint H62wu3HFSZ7ks72e4NUyJyMZqfJfDdJydFCWqVVRpump
+- Buy tx: 4akAnwwoWTj1xPDuAuKPkcdVBe3Fr21wuM5WqAuZ5p3SWCCv7MRjsgs1i2RfK9tV1q24p6Ynv7QmhgMJoBcyHKPa
+- Sell tx: 3BCNh4Jn7e8CLF4MtN8TXWZiSAHf7d97N3obKf8qduHamhBMzFRBXSNfVncoWH53yC1WyVNELrzdJ5iQg4JKo2Cz
+- Result: Exit on max_hold_time; PnL ~0.00%.
+
+Task 3 Result (bot-sniper-3 lowerfeeshold run)
+- Log: logs/bot-sniper-3-lowerfeeshold_20260119_131547.log
+- Token: Coin, mint ALNBUrShdMcWVMD5kkJg18MaXffQYD2Uy1Wwq7vvpump
+- Buy tx: AV8XrxEfrZ3nd84tqEVtDdp7CjZtaBPL2yhJvuCHab3BkhJ1NbrnX8TAqdjAzzq5uwZQBHW6Q1JpfcmYJaRfgtt
+- Sell tx: 4us7UszS99DXvESyCbaLBLdGZugxnVVGZatiCSyUjVU1pmC1gArfuaW62WzyDfJgtHAfkgehDDXGXSenbbksAez2
+- Result: Exit on take_profit; PnL ~0.00%.
+
+Task 3 Result (bot-sniper-3 lowerfeeshold run)
+- Log: logs/bot-sniper-3-lowerfeeshold_20260119_131659.log
+- Token: HYPE, mint FHUhBrnCkpd84mBCRzJCqNM7djuRnU3KogJyA47hpump
+- Buy tx: 3aNoahEXfzDwEufZrWRdT7ge1BYp2YbaoWFtB6vtsbyzvLgZgmQ7AbAejybYVh3X84Jy3mp9JwSPshGfgwUX7C4Q
+- Sell tx: 58nPvU5ih1LusRgSXfbWDnSGnba2piicKzrEWNg7iCuYLfXgafc77zEvwXpeqwsneL19JLjsbbPFp9atZGtV76cW
+- Result: Exit on max_hold_time; PnL ~0.00%.
+
+Task 3 Result (bot-sniper-3 lowerfeeshold yolo 10m)
+- Log: logs/bot-sniper-3-lowerfeeshold_20260119_142956.log
+- Buy tx: xw4AU1xnvQE9HJREGM1URA6rRWLPNFMSbCaqZ7nKeuMWp2PK8mAmdqUX9KXzzsmyk83E7xXz1aGsrXUMMFeU5n6
+  Sell tx: 2nhqBzB9JJiHWrWmhQcyvd7CCs71Wp7XwuPzWc1bu8jTEhMymvTtsh4PEfTKs8rmsrSN3WF6BSk4dX1wwNv1sjqM (stop_loss)
+- Buy tx: 2A2X6yqfAARML6XxptnT7oZ4mRNhhHNnj8XAZTZbJQFk6sCGfz1H2pLGWPPnRUBs1Zixaz8R7j2NtjXuQ2ay8aG9
+  Sell tx: 46HNgrdjkuVDbqdsQAb2Mv2KDHvvZtpGMVWGiYpAJMPnmJVttggsBrKzmhDDYWiCg4CsGHno2RGdht8YNaUnoEsz (take_profit)
+- Buy tx: 4ugDwCBx54aQhk2GCui49BVzNtRioD2owDtfDu75N1n4K1pVkmkSmRgk6grE1xbMjHzEoFf9bENryuJR8kn6hcU8
+  Sell tx: 4K5egbhALztuhCqQVb3YgUhjgscUaxJujyQZgJ8BZy2p7Z6FdF1wBV1ZixZ4j5U3regQ2rwwCunpA673aDnVegVH (max_hold_time)
+- Buy tx: 2ePvRmLDe58r5XZif9yUw1DddVvAeSYikfrJeHNGka27WgCTpnoYHoFzKa31pnWJnTWYXEQJafofytkW9GTET1vm
+  Sell tx: 4qDGJNR2SMdU486e4YkyX6JwRFtMYCNBx4GHJ7HmrJqZvBhWWvUFwfcu5Xgk9Ho6Q8KQtu2e6D6wZZ8fNdKp1T3y (max_hold_time)
+- Buy tx: 4sGGJq8ixVRXPCYbPK1BkQcR2cuB1FHZR3Kk7JVtHVRbKjwNxoHKLeh9m4sYrWxG8aHrKeXvPimNjRmAu4tMUXaz
+  Sell tx: 349sRzSoab1EtTexxRyqPeb7PhqFsDRRkUhZpWRRcnzSswywct16z3AVyPyuttryLytWhTMp92ye3pH35pmULbBU (max_hold_time)
+- Buy tx: XdsXpXe852F9FPwtyJE4ZiachomFSGgaupMkDu2iJUCjMMjzi6NRJhzFgtPXCa7AZhHVKoRsUnweji7H3gaNCnP
+  Sell tx: 2unKX42hS4Lt2U47rVxGS71RLoYK2L8hjKsMKNRYBAa8SS96RvsDc6WKj76pH4uPMvATcHph7BZd4xUfLwERqKiF (stop_loss)
+- Buy tx: 2Cd5HC5heoX9Nv47fsjQ7a5hoxAno1o1HcspHc6xryaHaYUfww8bjtHdPjKUNHzWSWuSnew21ZWS785DvL9uUecj
+  Sell tx: 2iiCMNiJkEDGb6ZTSGBtxVmS7MEARyDoMLPnc6LCvx4uwR5UUKEUnAZs6v9t5fE3g4a43y8J7ZVR3X2MEs7FAoLt (max_hold_time)
+- Buy tx: bq2RqQnc1eLyCvkeADzqjyst11pYTezpxG1iKyEttfDXEvR7343BKomBiY5WRfgNUxtWW9XLJdDp2LSfy1t8gwG
+  Sell tx: 5vWj2FKv5YwUpD1vCABCGQrVYcKEH8tybcxzNcDd2y82ypczXJERPiUqvfnN677bq7z72MYRbwMGDp5bLxCL1t7u (max_hold_time)
+Listening for new token creations...
+Listening for new token creations...
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             leadcoin
+Symbol:           lead
+Mint:             FLqbnzVoW5pC6xHH7Eped5P7G1Dt2tsJG9fpzYkUPDWs
+Initial Buy:      66285714.223523 SOL
+Market Cap:       31.762049 SOL
+Bonding Curve:    BdxWXWrnrm6j1MgL6XryJ7zzXt8qukF1hQbdR2k9uvYA
+Creator:          CKp3JDtvUWo952RuxQX4upWqHXb6duTT5faZRKwjrhcs
+Virtual SOL:      31.975309 SOL
+Virtual Tokens:   1,006,714,286
+URI:              https://ipfs.io/ipfs/QmbX47qahvUFj5giazqR9hZW6nHBmRfAwpLYPBtBuchQv4
+Signature:        4rTf3x6d9w6YojEo3J51thrvZzkVsVgyBVf6omgeovxcMN8mAcDopqwSiePw1d8MHVGTTsCH2T9hpjTDUAzPzHAH
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Art Of The Surge
+Symbol:           Surge
+Mint:             2RVyY2JjhCXuERnGLCSzmEQ5uwsstfU3y3cMTvRYsurg
+Initial Buy:      87021849.153608 SOL
+Market Cap:       33.110355 SOL
+Creator:          DEVsZnwbqtjDyn5kJyvP4YFcfnqQdbS1u5jDyeFVy1fQ
+URI:              https://ipfs.io/ipfs/QmeKynmKCeUFsn32mnodrJhU7vmqX6fB7S6jJF58KPjCt4
+Signature:        4kLAjExWo7ZY63KokFapTZFGxe1kFFGZucoFkCU1XGzsxBMhGPedXvFcpCdmVWMRQgnxA5WWEDW1C2Q7mp5Fq1LM
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             leadcoin
+Symbol:           leadcoin
+Mint:             CZN2UyAQvtx638rBMBg4W1NVf63XGpyrPmkvY2Qfpump
+Initial Buy:      42411067.119946 SOL
+Market Cap:       30.307494 SOL
+Bonding Curve:    12ZM5ozY6vHmbog5WJRWM7Mb1amRAwQMfSPWBT6AN5dz
+Creator:          5oi9nEz2VdfkHL9N72ta8u1oTrPVJUiYxbEDuSCNzsZy
+Virtual SOL:      31.234568 SOL
+Virtual Tokens:   1,030,588,933
+URI:              https://meta.uxento.io/data/8e3bb532-daa8-49ef-b65e-31c9667fe1b4
+Signature:        FTTnJuFKarH8c25Jh4kNt9UUztBFgLdx4D2RacvieptKRZ1mUbQbqJqRptpQXXiKafjtpFU6E1nC3uoTzSaFYGn
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             PennyWolf
+Symbol:           PENNYWOLF
+Mint:             BUqgN6kZtKdFuLZfFUcm15txZS9DifeyMahCDEfpump
+Initial Buy:      24170555.050808 SOL
+Market Cap:       29.262487 SOL
+Bonding Curve:    3v2CdoyKFhjNuZPGyrqiYG6CbAxxLkCzPAWfVXBjSvqJ
+Creator:          7ttssvHBVLgkaLFAj1uPE2ziJNCa4ATNVtsmBV4RWx7Y
+Virtual SOL:      30.691358 SOL
+Virtual Tokens:   1,048,829,445
+URI:              https://ipfs.io/ipfs/bafkreie2unqc4pnay73dkd7wfzvnmvqqxq7nshgqudbdkxmmmr3nln2t3q
+Signature:        2QrFYQDSmyWNR9Yb1PYRmA98VpoGJ8pe1Aty8mRQkd9TWaLVWLJW1hJ13wsC6BCLpPVAg3ZuaJsuHm3n3gLj4Ghf
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             fill the comm with dad jokes
+Symbol:           Dad Jokes
+Mint:             AK5zs1T7iyxbRnZaeJfYd6pnQr9o28sLcAcMyw1Epump
+Initial Buy:      28205161.042478 SOL
+Market Cap:       29.488925 SOL
+Bonding Curve:    F1RJcWwgifn9YAnunANdUBjeSReJTtfWVn1tFXKLy6yp
+Creator:          7eF76PqNqPZbU2qTuEnGi958RWzrZ3kgJ39N1nCn4BUW
+Virtual SOL:      30.809877 SOL
+Virtual Tokens:   1,044,794,839
+URI:              https://ipfs.io/ipfs/bafkreidtoo2dzxrqygx5xzh2ng3bthm5x5kusmwi4epnnxzgc4qti2idoe
+Signature:        456ZWxBZP9s1YW3expFMbGuSXoXSg5gBnhT9eQRndwYaWwgfLEojBeS6fLiRQ7wDvVPJhKdFziooLpj7sr3T4e6Y
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             genius move
+Symbol:           Genius
+Mint:             3rAb8TBMRi56RdqozHBuQ5Sc2WuMnhyUnrmVEgMdpump
+Initial Buy:      8750424.445966 SOL
+Market Cap:       28.420650 SOL
+Bonding Curve:    F7Sw8XUCRCqEZi549ZmYfUsz5NoGZow2qDmWoVdjVU8m
+Creator:          5w27CTJNyL42rNvU4jL9sLEoMRm1A4nSxprNSEW4sN2b
+Virtual SOL:      30.246665 SOL
+Virtual Tokens:   1,064,249,576
+URI:              https://ipfs.io/ipfs/QmSbf4c8xUDNCBJHc7PidkAbkjQ2MoYAq7FAi9mz1aPPuh
+Signature:        5h51igpcX6qawXJYDMtWcwKL1NptTPnFwFvtQPQV93LuovGvCN4f99bWZnXhjVp64NoUK192TxSWfXoKNEARvPkJ
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             lead inu
+Symbol:           LEADINU
+Mint:             AyyS5hgHKXFQGrffU7LXQRmFyonvqp93TR3nvjTZpump
+Initial Buy:      96449438.144093 SOL
+Market Cap:       33.754487 SOL
+Bonding Curve:    4GriGmsuckMb8LkVkbNBuzW9guDAS7xtn6QRn9XD8vTg
+Creator:          6gMtVxgjPEiZwUb3nA5F4gg4RFyzmJLgKDUGap6WmK8Y
+Virtual SOL:      32.962963 SOL
+Virtual Tokens:   976,550,562
+URI:              https://meta.uxento.io/data/547b3b45-48d1-4fb9-8a0f-a33fd3eb5c9f
+Signature:        GuDKrKc7RQohWpmtWnwdgs4RGjSrhSij46Y4UCxJdeTzpq4mQKRA4kBFgaWpVeRR1vKoJTYYiV1QM1YdGHfs861
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             C'mon Do Something
+Symbol:           CMON
+Mint:             Ek4xJ2pBnXDGMgobE4suyG6mNiHefx6bqkXrPbQSpump
+Initial Buy:      96449438.144093 SOL
+Market Cap:       33.754487 SOL
+Bonding Curve:    HbgB6KWxEV4JCTCd9sUqwBUst6sGDRRdSVsWfQCCznCX
+Creator:          GAodqVg6S6T3RNQQs6dXUZvYoFR874XyDmbonMhA83A6
+Virtual SOL:      32.962963 SOL
+Virtual Tokens:   976,550,562
+URI:              https://ipfs.io/ipfs/bafkreigurqi6pc355y74qdoumltbskndj6rknxmatovf7dya23hkysscre
+Signature:        2KbsinHKMzLKBrmiXQjUifdnMPrgLCzTSYvzz5TSPRK84sXGCX45frT1gdCrVZTvhWSQ7wyRARjdCAu3wDxNYo9y
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Bobo
+Symbol:           Bobo
+Mint:             B5KhxgG3oj62XcazPy1LhPvAf8Mobq1XQbDu2yAQpump
+Initial Buy:      33942543.576501 SOL
+Market Cap:       29.815483 SOL
+Bonding Curve:    7GuAEaKK4diRNJhEYUQwHCuswvy5oDkCJ5qvKMXLyLnY
+Creator:          CnWHwCXQ6eXKFdT6urHF3SDxJ9MwzVEWVbsrJnks8bX7
+Virtual SOL:      30.980000 SOL
+Virtual Tokens:   1,039,057,456
+URI:              https://ipfs.io/ipfs/QmXVnB6X4Fv58Gsw4Y9ySdtWhaZmAoK7ZkAdxYD8qrpS8x
+Signature:        5mvQAqrkad8ACx1KoRkHdyJeaYGfWMvYhcVvSLmVDTwL3HYDU72LVVEMM9RrP82JgwkzjahKnrxdQNQHW2Sct3UU
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Bitcoin TITAN
+Symbol:           btct 
+Mint:             Ezbe3WPMHzx4vPsDxRNj551UFQKhEYFn5rQSwvWNpump
+Initial Buy:      96352988.705948 SOL
+Market Cap:       33.747820 SOL
+Bonding Curve:    DLjbaVb4Q8nEHst5YxHQBLHyy3j6vKAcYdcSiJTN7BcQ
+Creator:          4A9uHMD8MpnTfkpkcTWYYU4XtsU8eZXGPjjoGZcZnV24
+Virtual SOL:      32.959708 SOL
+Virtual Tokens:   976,647,011
+URI:              https://ipfs.io/ipfs/QmSJ8kytw83Monc6NRHdg4wbAWNEHngS1Eocq6Jij4YrQ9
+Signature:        5LviFgJr4KbPA9EHY5EbHHrBGCjMqLdsUTeU6RApsqWNoqDBdAiQP59zjd68WmVw6XEzQ6WDQebQd8PewUM8p5o2
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Pepe Gold
+Symbol:           $PGLD
+Mint:             9fLVorQVuDmJWAaU9nUQWSfTMJpySfW3vS2RGSiRpump
+Initial Buy:      1761589.116284 SOL
+Market Cap:       28.051023 SOL
+Bonding Curve:    6cHgDoxMoWVzEDhC9ya1jHduENnCo3p8nAwcnExefmi1
+Creator:          5D4zNFFDbPBwr5CwXoJQ7S1ywceannsRRsgSYgu4r2Hj
+Virtual SOL:      30.049333 SOL
+Virtual Tokens:   1,071,238,411
+URI:              https://ipfs.io/ipfs/QmdRNG6fJbFQbHoa3vKUNJP8RdE1Qq9oP4Bfz6h9u29fnV
+Signature:        3r6zTHvNYUXU5extmzmHKjCKdHRwqvC7wXCxGftDBxgSuJBUm6vRmPoBL8RBTQmsiswq6VnFkGsAfwy1hYKVrpzV
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             UN1CORN
+Symbol:           UN1CORN
+Mint:             132BWk1PEBLpn4TPguUQGHH9k79kYK2at6XgweHUsurg
+Initial Buy:      70772241.445257 SOL
+Market Cap:       32.045417 SOL
+Creator:          DdZG8dw12CsHjj2Ytfo1vKNPPoU4DEYSMSxdhPjo5U6N
+URI:              https://ipfs.io/ipfs/QmbQPYazneVg3XPfJARNtMYLe1BGoKX5DhYgtxz95yaUSo
+Signature:        4JFYAhjZ2aZUqfFeNH2CfUgH9ZstJSSaFUg4ZdAC8nrZLTeVZvzeJAS8JJgsKUrvXbg8JP1kayR1PWHvYFz4n4DF
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             daatdawg
+Symbol:           daatdawg
+Mint:             ryKDkhU5fkeqQTEcNfHEo9dGz4jFz2u7jabyEnkpump
+Initial Buy:      17359141.648743 SOL
+Market Cap:       28.886079 SOL
+Bonding Curve:    FT3NJfmerTxikYuMsuS67VBiGNwAhNQskkFB4ydS2GR3
+Creator:          Dbk52g9BMnGSDxsNetFngtV27HFRmjRxH9HjuFp8Za5R
+Virtual SOL:      30.493325 SOL
+Virtual Tokens:   1,055,640,858
+URI:              https://ipfs.io/ipfs/QmNwXN7Eed1RiBHdQj25pKE1hQ6UenmYq8ajGVGkqrdrRv
+Signature:        3dWvNHdZPamc48cbMMoCWmAA5QaKNxmyyFBfRizEr8N2W6o9s7HmFgQAKra5HXQ3Zfna1zwpnDrfCS43SSvR9jxJ
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             50 cent
+Symbol:           50cent
+Mint:             EXb2tM8rMUMu4Sj78C54JHwXQ9T24ooeFVBxLcwcpump
+Initial Buy:      137750.148569 SOL
+Market Cap:       27.966174 SOL
+Bonding Curve:    AmAMEU78t76KiqGMHwSzZT7HULmCtNwYXpTgKeRh7xXK
+Creator:          DUN2SrAzQkoUEiXfXeehhgxgLz7r36tqaFwymEfUkYug
+Virtual SOL:      30.003852 SOL
+Virtual Tokens:   1,072,862,250
+URI:              https://ipfs.io/ipfs/bafkreicwiyd6nzy23bpy5yejbp5uwvzyjpvgotvunemx6h4vz2d4t6x7tu
+Signature:        DPiVEchxoGz2gBFmiXYZv1RYpDgKEeqixJzZdbhS26p6FZEermoVBEiWQNXwW1u6j3PrmZdQBcmDFqsnfauA9aX
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             United States Asset Tether
+Symbol:           USAT
+Mint:             DLrCr7Fm4sBfQej4u9X7ZzQN6q2tzYi7jY8PasxAbonk
+Initial Buy:      57715924.356731 SOL
+Market Cap:       31.226544 SOL
+Creator:          CMGBZhwAYBntYa2KmvUHbVyZqCT1WDxqpnEm42jygd1E
+URI:              https://peach-select-falcon-536.mypinata.cloud/ipfs/bafkreie6qmm5z36i433ubmhezofqg7sxvoaidukcznhiontyjnsd6nqume
+Signature:        4Dsc3BbnAE6fPeWU2M6uSwGeoge5r18QPeAXUosWUS7qJBVGtACokasfM5aAPhLgdp3usTtCvdfmFUgMZRcq9UAK
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Erect-Crested Penguin
+Symbol:           ERECT
+Mint:             3pPCPAqtuykB6W9MCrf3eN4TaUCWz6kGEgC6Wcm8pump
+Initial Buy:      96449438.144093 SOL
+Market Cap:       33.754487 SOL
+Bonding Curve:    DscwE9zx5b1nAUejERPBcQz8CCJzw2puuWW9SjnFRW67
+Creator:          DVhwSE98dHBtEGnQcYyAiEzE2XFjGnGwwuv9n1Ypnre9
+Virtual SOL:      32.962963 SOL
+Virtual Tokens:   976,550,562
+URI:              https://ipfs.io/ipfs/bafkreihuuh6zvoti4wn6epw67xu3gbz2n4chcovhtlmqkd5z2x74qcvp3q
+Signature:        2fGXtuLxXW3afM8gaiZfCyEhwz2gwtJkYaeigfihWF8UbhNhH6ZUxeniZgywrFC3beaJLE8Jmws1NZq5VEJReKBS
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             lead inu
+Symbol:           LEADINU
+Mint:             4NjiDdPkzULBcEsuFVEDqDUSXXTkMBCbMh79tKMFpump
+Initial Buy:      96449438.144093 SOL
+Market Cap:       33.754487 SOL
+Bonding Curve:    8K1rMzV4k4Ba5NH2zoRAHGRL7PTD2hSsf1zxdbCWjocz
+Creator:          6gMtVxgjPEiZwUb3nA5F4gg4RFyzmJLgKDUGap6WmK8Y
+Virtual SOL:      32.962963 SOL
+Virtual Tokens:   976,550,562
+URI:              https://meta.uxento.io/data/debfd4bb-0860-41c7-ab5e-6d888bf21617
+Signature:        55qXrLgFpaxhQYTAD29xzNEoZMkgYAaz2Dva8k6WUCTSvjUEgM5atuWbDnMMng9C2muTaQTW64XWGgYKL2cTx7Qh
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             1 TRUMP ACCOUNT AND A DREAM
+Symbol:           1TRUMPACC
+Mint:             5pC5QwTaMNp196e1VNHeTANBo9U9rCoEz7Vz6hTvpump
+Initial Buy:      16007134.692055 SOL
+Market Cap:       28.812229 SOL
+Bonding Curve:    2FfHraVaZnJ1veVtwNgb4hk2VHTcSPDgNngs3w2ch43U
+Creator:          85YmX7kCcUCT3qSRStcqQUHHuHg6XWRHuuwSbAXQK8GR
+Virtual SOL:      30.454321 SOL
+Virtual Tokens:   1,056,992,865
+URI:              https://ipfs.io/ipfs/bafkreif5y6e7q47nl3l5r2yhwa43n3dchqenko5vugqh77jtixrakqzwgm
+Signature:        5jFyfmwwpUHR5WVFrZ6aTQZD9LdZF2eiYrZJhuWEABJWBEpMHQjB6P5WC5FwB8SMkqdDV7MnCqsEKDfwrYaKhQt3
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Make Dolla Days Shine 
+Symbol:           dolla
+Mint:             AQAWNAB4ssE3MDbvwX9p8uBUizYRqzVraXePTxQ5pump
+Initial Buy:      47953610.480375 SOL
+Market Cap:       30.636132 SOL
+Bonding Curve:    4ktLohQxD9mpF7smhVkxFrM4W2C2irgXrt4BW4Lg3WTd
+Creator:          HXx5LSXKmrB5aYps8KK1V34pYd3cdvxC5ebY3LkKJs27
+Virtual SOL:      31.403457 SOL
+Virtual Tokens:   1,025,046,390
+URI:              https://ipfs.io/ipfs/bafkreie56yywhgrktitjt6lqyxosgxghqh75xazaiwnzj3mkpo5m5r7dom
+Signature:        35a5ZgRzPpfoAaDwHC9Vsd1GqVSn3ZQjjKX61Kge5tc2yEBCyiagxBQKipPwkXHccvuP6xQhx8adLTFkrLdc9Rx1
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             SILVER INU
+Symbol:           SILVINU
+Mint:             7oN613gRCz3tYxjUhSaoJuAcap5iEWHk2Cf3PGgcpump
+Initial Buy:      7011787.365782 SOL
+Market Cap:       28.328017 SOL
+Bonding Curve:    8kmWMF9drrzrLeWDgj7DLbMkCD7pVGkKWBGKWKF1LoN4
+Creator:          HGuony9rNTGpyyx5ELPK7DwHcUQkAwAECpaWEUGzCqkC
+Virtual SOL:      30.197332 SOL
+Virtual Tokens:   1,065,988,213
+URI:              https://ipfs.io/ipfs/QmTSdeXwGwkyctkBPscJBr9FXvzR5BqJBEQ5TBZiRpXFpB
+Signature:        5PuF9zQffMUW3LZNUVSkmqU8hdHvsG2csYDNxnY5VetHPQBGfR8uoMU9d3U5fw7JH3w4ECp8FvFBRu4e1KRrBp2F
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             The Alpha Cat
+Symbol:           ALPHACAT
+Mint:             3T6pNvZmYxmHG4XKxXLizJSTEkCRbtcpFgbZcpSppump
+Initial Buy:      3564784.053157 SOL
+Market Cap:       28.145697 SOL
+Bonding Curve:    HB5wXEM5RdeXdEitNKVJhjkYkDdG9aYDfMaXK8iyk4fj
+Creator:          3N2PtRZfqArCokfLMxqCNzFGR6N6d973gsE9ybcWSfcQ
+Virtual SOL:      30.100000 SOL
+Virtual Tokens:   1,069,435,216
+URI:              https://metadata.rapidlaunch.io/metadata/e44da940-3434-4ec6-bd1b-0bce1900f0fd.json
+Signature:        3xtWCYJ6y8CuHJCWbBqt8xfdEXo3X41W75ZcLXUadtMY7E7U12WCbWgLcLDBfdayMBpUqb59S4ByCz2XNhCst6Dj
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             RIP Penguin 
+Symbol:           REST
+Mint:             ErFYL8qysaQdeWMT7z3uhckuthQ9YT2GYS7Z2nYcpump
+Initial Buy:      15271498.375826 SOL
+Market Cap:       28.772166 SOL
+Bonding Curve:    D7EQwzmrnhEoCXWL5VuKmK2UXKjQaHkrLTXLqJWyX8LV
+Creator:          DuEpR2LccVkQLFx5gRyoVDCvQBev15744edWqVWBHPnd
+Virtual SOL:      30.433140 SOL
+Virtual Tokens:   1,057,728,502
+URI:              https://ipfs.io/ipfs/QmXoE1unyZFiYaDU2UtxGsNVRbpJ9GjFXvduwgK8R4aTq2
+Signature:        5LBuzwBU3moKUSHFHG7djYksBh45vQ1Rih65ShimAvxWCS3BBRpney9NSbYQsXZY23nYB1qbgptxbgjAEqLZ1NfJ
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Protect the Children
+Symbol:           PtC
+Mint:             2LNScuS7vXHyLwaAhKyJuSCkQMvQJuDEjNjjjFBxpump
+Initial Buy:      47276160.458347 SOL
+Market Cap:       30.595678 SOL
+Bonding Curve:    ACJXe4RDTvUarQa85h9F1WbtJMAmCZPZunruYkwrmTHL
+Creator:          6qqXU2UJZ2xzdom2EGXe6XYcyXdek6X9JBX8cxEwEPc6
+Virtual SOL:      31.382716 SOL
+Virtual Tokens:   1,025,723,840
+URI:              https://ipfs.io/ipfs/bafkreigfaufjwbediwb76jgfgqfftii3l3my5vvuvqoie7btwtbe4ixtlm
+Signature:        4HnM4bRTusLXVXNFkztHWkZJBtcwVkJDK2wU2quTas6R7ReV66f4DDSv2R4kA2TbtmpZ9Zwik7KeDKhuTUNRHidw
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             FIRST PUMP.FUN API
+Symbol:           PUMPDEV.IO
+Mint:             96swnuQVk8e8JZ41ozdRf9tmUVCeKH4q6Mc831mHJs9m
+Initial Buy:      0.000000 SOL
+Market Cap:       27.958993 SOL
+Bonding Curve:    4SxWMynXZtgCMLcJwHvG73LvwMN4z9FmX642wMNijvhJ
+Creator:          9Ax1HpNb35CDpcXQAHDfUkH86k7zJ78B5coEQ1ZZFQfu
+Virtual SOL:      30.000000 SOL
+Virtual Tokens:   1,073,000,000
+URI:              https://ipfs.io/ipfs/QmaJmTVCU4LN4ffhtQsogezeCYyq7XcQFuotLVjSY9RdVf
+Signature:        5yLycFbU6f1tcP8XefuZ6y4z1rMCN7BhV5jBEzm12s9RxJzVMYMayAFE6EepPwryDFKdVx3jgCH9cJPjEYjqQdbo
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:              
+Symbol:            
+Mint:             6tJVMv9cbw1osWdxKtZxbng7FT72aTL3nD2sdQUW5k1H
+Initial Buy:      0.000000 SOL
+Market Cap:       27.958993 SOL
+Bonding Curve:    AaAuNRub5UTvDK87ar3QCC45Fg2TckqKe5nCSVaZWHxY
+Creator:          bwamJzztZsepfkteWRChggmXuiiCQvpLqPietdNfSXa
+Virtual SOL:      30.000000 SOL
+Virtual Tokens:   1,073,000,000
+URI:              http://93.205.10.67:4141/metadata/0OrUpexy
+Signature:        2Hz4wgAKeGiy7pmZgDzpDTzmeXGPmEtZQ5FGLrMBND6APMikUiyESpHQY4FagjbnFryso14q5ie4qqB9WCTfZqo1
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Nioctraf
+Symbol:           Nioctraf
+Mint:             DEt5Px8v71Xi85RMY2NMuehFs2BTFHwC4aFTu4ZTpump
+Initial Buy:      66285714.223523 SOL
+Market Cap:       31.762049 SOL
+Bonding Curve:    CVt3Xj68m1GBXJ6oroHJ4wthY7CxkwaqgLWoXuALReu1
+Creator:          3Tx9rimPi7nwAyNqHB8U4JhdcaLdhpVLuN9uSENYWJoY
+Virtual SOL:      31.975309 SOL
+Virtual Tokens:   1,006,714,286
+URI:              https://ipfs.io/ipfs/bafkreidq7ceakabwzpb6e7qcjdipz6mccj62wp5f7kpx5454fpxew64hku
+Signature:        Qdbh6hK4yK86KmFX8SwiYiM9TETaof19D5BhwUkQXqo3siATwmzsUd6HQrgwhHiR52CJGFZsgojYWRRycMsn9iy
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             grokstein
+Symbol:           grokstein
+Mint:             EugrUnYnAW9tnrUa4CDL81XtKZJSTdpZaMuboMTYpump
+Initial Buy:      66285714.223523 SOL
+Market Cap:       31.762049 SOL
+Bonding Curve:    27uLWFiCsjjGrqK7z1kCPnn9vLuba3999jux3rnVHkLp
+Creator:          ApizigtuTuUTyjdjbqA6u1HJJy7mduxDi2iVb6HFEVPG
+Virtual SOL:      31.975309 SOL
+Virtual Tokens:   1,006,714,286
+URI:              https://meta.uxento.io/data/c77f446f-3070-42fc-b3fc-3f290dfc110d
+Signature:        3WciSCZ1dSZ1DUtUTYY64CUdjZgNdk9kPKr74WUk9Ss1s2zfN4rz5ebiTDBnnByxKB9WVzFKj6WjFKQv4asQYdpF
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Jimmy
+Symbol:           Jimmy
+Mint:             25rAmMUhKviQQKPArf4TTLcNoCrbNPojjENcoAUCpump
+Initial Buy:      97545454.545455 SOL
+Market Cap:       33.830382 SOL
+Bonding Curve:    Cbb4mjSr3s6JJwkhhfRBKWU1pAhfCSesVh2QJQ7VkTUG
+Creator:          CL8cS3KUGboEstdLUJi1XXq6KzKbdaFAL7TQjEEgL7hr
+Virtual SOL:      33.000000 SOL
+Virtual Tokens:   975,454,545
+URI:              https://metadata.rapidlaunch.io/metadata/fc8916cf-a5da-4907-b2b2-bfbaa458e348.json
+Signature:        2gyowjTcvQ3KYuHyVnFrCTMe2eMKFSP7Z8xK3B15UyhsJnt9y3ohkrBoKRxgCtvFffmq5be3hTtUf3s61Ee7irJi
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             leadcoin
+Symbol:           lead
+Mint:             HsYTEq73QBNTPGxKKMTRGWp1LARamNQZ9gs4VK41pump
+Initial Buy:      124858181.763706 SOL
+Market Cap:       35.807531 SOL
+Bonding Curve:    EiYC7XLjsmwts3nuMtQKpJeTC5qYmcxwpPCsGgxD6h7o
+Creator:          FAicXNV5FVqtfbpn4Zccs71XcfGeyxBSGbqLDyDJZjke
+Virtual SOL:      33.950617 SOL
+Virtual Tokens:   948,141,818
+URI:              https://ipfs.io/ipfs/bafkreihcxnrbfn55uw7ivvoj7kmnhxsw7ymdnc7tkauf3lqim4szvw43oq
+Signature:        33db1zEkkseCi77JoMHpUQnx5CKjZqVuLfXo89ZL7pso1SvruAVCSzeZkU7T3mkXpEH4FvGQqx5d7gVPytZMRQ5h
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Pain
+Symbol:           Pain
+Mint:             8xGRXUAk89wniLv5TxkigiXoXUQC9u2qY9CDszbXpump
+Initial Buy:      34199203.120618 SOL
+Market Cap:       29.830218 SOL
+Bonding Curve:    GGm9iu6rT5jQRKaLe5ma4Qo9d4iizCPCKreBAd3XBaKU
+Creator:          HY5sPTxMesQTVw5HpjrViwPqTxe2hrVAqBHFsB67qHEQ
+Virtual SOL:      30.987654 SOL
+Virtual Tokens:   1,038,800,797
+URI:              https://meta.uxento.io/data/4ba53892-e99b-4223-846f-54be59cb70c2
+Signature:        5cbXHxzFUFkbnj525eRaVj6kAB8NkbRqNJdD7SvfabDF3V11GM2D2QvJU3inmj3h9SjWpR3ryYznKQf9U1T99yxv
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             GitHub Copilot Plush
+Symbol:           Copilot
+Mint:             9hpHh4y4NzvNmDWFkg4Nj9G9nVPArCdV3c1ATGQ7pump
+Initial Buy:      97545454.545455 SOL
+Market Cap:       33.830382 SOL
+Bonding Curve:    7eQwSUXgizQaqHPBUBrEeDCWKqbX1S1E6AHxfQPTDUvC
+Creator:          GU9S59hLLbmbJ6Wqi5bUZMvXykiiiywtpxTsS2bynugx
+Virtual SOL:      33.000000 SOL
+Virtual Tokens:   975,454,545
+URI:              https://metadata.rapidlaunch.io/metadata/dc85abca-bb7d-476b-901f-936004f7c7dc.json
+Signature:        5VB4RKsM2hxGvVL75kyiVsHeWD3738o3MEKHjEnUkUm25ZFtD3mhhRSevdEfGzmkQEfGX3KLQAUKqr6hReEc4YtR
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Latinas for Trump
+Symbol:           Latinas
+Mint:             GSxukptCa9tU31K63xZLkyV17AMiawDyBGgrr432pump
+Initial Buy:      3387107.457396 SOL
+Market Cap:       28.136347 SOL
+Bonding Curve:    CQdYdTqLUHkoPWv4ziyxxbpYKMtntSgTb5mL8qMnb5Mz
+Creator:          45MUS5JAiQ5tVfePvN9dmMu5u2wkRihASLG5xSLUqBwi
+Virtual SOL:      30.095000 SOL
+Virtual Tokens:   1,069,612,893
+URI:              https://ipfs.io/ipfs/QmdcfBA8yoWhbYpNqqjAVHydQ7UNRzAr7U7yZx43cFxC8T
+Signature:        3f6dfDYBC9EhLbSHKsBvafKtN9aAAD8fJsRQnAkJsaWoQHzpjnh7EAXKcfFW6WXWTpbGEWsmYdXk6ioFfRRn3PX3
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Predictefy
+Symbol:           PREDICTIFY
+Mint:             4LtGuh9ZkrN4QDUQkLXMaNCGUzToQvTCmv8VR2UJbonk
+Initial Buy:      158978851.209200 SOL
+Market Cap:       38.528682 SOL
+Creator:          GBrKvEXgrK6YT8rLpYnBK2Abq5MRwZyzA3W536be5i6d
+URI:              https://ipfs.io/ipfs/bafkreidfcyqdlxw5ci7tsoa2itndbhhchblu5lbp7tud2x7uzwlbeg7rmq
+Signature:        2WpShcptfHrLb5yQZ8e3CCZjojAiehQv3fST6agxtN1ZYKzZcdmidfg4paHEiJ3wzJzf857ufA7SyzTxLu1PW2Zv
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Solar
+Symbol:           SOLAR
+Mint:             FhLBr5HCTifXbkJTkDPtzhTCM73KCBu1Fpj6QXJfpump
+Initial Buy:      33942543.576501 SOL
+Market Cap:       29.815483 SOL
+Bonding Curve:    Cy6hrnBiQfaNWPXLCTFV2WMaVX4qQbFhb9ZEf1doJYzG
+Creator:          Ao2vUXNrEWwQ5o4pjECwprA4YAMXTvG9qLEXGZKjKqmf
+Virtual SOL:      30.980000 SOL
+Virtual Tokens:   1,039,057,456
+URI:              https://ipfs.io/ipfs/QmbXT7vhYj3P99qqMUPShBZfADoVtSqNw7b8Gsn9dGACqp
+Signature:        26SQ6wk6RZZg1dNrVmLyLaq451iao7yQ7QkVe8VJY1M3ZhVMG44ZJyV32cSk2pL9ptxy1xuDgFbVvekjGTawjEjT
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             neon inu
+Symbol:           NEONINU
+Mint:             Fs5abUVrykbCtWnJVqZeN9D4qfn4yXRFzCd2bBZipump
+Initial Buy:      28401446.275707 SOL
+Market Cap:       29.500008 SOL
+Bonding Curve:    HuYE9m6K3eeXoYtPUxmy6NhuCHaHQEdb8w6PUcqfSDRy
+Creator:          6oGJjyFZTonTcmx1Frra213PQZdbnbaibBppLCzxcFy8
+Virtual SOL:      30.815666 SOL
+Virtual Tokens:   1,044,598,554
+URI:              https://ipfs.io/ipfs/bafkreifnn2hnu5cuxiabhwlkgx5euicbzq42ejqsqnlm6eenuwhcx2deku
+Signature:        cQVaD9UWaJiCfUFEStV5LMf2Sgs9evBaEuSKFuWrbNHvypHqtALwGbdZGDLWdpqAm2rngHDyr8DYHejn8caYUAr
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Chip
+Symbol:           Chip
+Mint:             ERRcV3RQ4vwNqzwSoHfPEbERNig1CPJMitkW5iiipump
+Initial Buy:      50494117.598940 SOL
+Market Cap:       30.788558 SOL
+Bonding Curve:    6YiCNvzyXKf1LgPuwHKhBMpqXjtL3xDUXmBjoRkPdrFW
+Creator:          DrzHSvLrzf65eSy7wYoGJSkV3seScRLQMp4ZRBPAJ171
+Virtual SOL:      31.481481 SOL
+Virtual Tokens:   1,022,505,882
+URI:              https://ipfs.io/ipfs/bafkreiafqruazcswikvfe2figehsa42q5v3vrkgbrpafoakohnta4ylr5i
+Signature:        4QFAS7586aPrXSn6RcCeNDEduakaZgj2UMy6fWWs24ydMazH2zSuZsoBk6NkPcSYT7qbxAvrwnDkDzxW2P4dKx2U
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Shimmy
+Symbol:           LOES
+Mint:             GAsGq9kW29kbpNTnHP44TZxgH4RJaqG7Xzwf5qNFpump
+Initial Buy:      1788384.000000 SOL
+Market Cap:       28.052426 SOL
+Bonding Curve:    BEEyGghErWKSs8fpShTvj1mK1JWb516q1HaqetNABJmb
+Creator:          2X6JBQ8xW1NHteXAR3fXLAvCRREzEYYrwy4MRSxGSUMM
+Virtual SOL:      30.050085 SOL
+Virtual Tokens:   1,071,211,616
+URI:              https://ipfs.io/ipfs/bafkreigqzjraygmp7y7suqvv5y4ml46dnbirkolg6wuk5y42pqng6wvg4q
+Signature:        63xAuMDBc8x4aW1tDMDesD2pXkLrkgx6oURUr7J8CQ2g1F4z9pXugiypGJQjdTz8F5tJ3ohztNpPeMy2xqBpguuj
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             iron inu
+Symbol:           IRONINU
+Mint:             A9mUBeMQM3C86Rg1uqJaS9ApLuUuPJwxYKSeKNAUpump
+Initial Buy:      34612909.387096 SOL
+Market Cap:       29.853992 SOL
+Bonding Curve:    CQMtaSgMfkB2tTvSpiQ2VHj3wLC5e2BFLDZQBFbJP3eS
+Creator:          C7gAptjHzcgn3r6SbCxJUzbwg2x8gaP3ftCGXEXtnKkK
+Virtual SOL:      31.000000 SOL
+Virtual Tokens:   1,038,387,091
+URI:              https://ipfs.io/ipfs/bafkreicmpnnnfwndwss7omed2wa3be5y7yj4lhimsth7da23xh4vxily5y
+Signature:        4dMjcpJx7K18AoceCcKrJS5DUARfZMLkDcJPkcwkfHdmyEtkwod47hGYuHXRXDZ9pzKzMCC7NyQ7STbk1woRY4mD
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             PEW
+Symbol:           PEW
+Mint:             4L5GaPaxRD7NLDmxAoaxcQqe1DkbSRtWz94mexoHfULc
+Initial Buy:      237344682.286798 SOL
+Market Cap:       46.093533 SOL
+Creator:          bwamJzztZsepfkteWRChggmXuiiCQvpLqPietdNfSXa
+URI:              http://93.205.10.67:4141/metadata/rvD2MgxW
+Signature:        4FW8Dr6DB8piN62dcCYe2HvkiL39gvVXwMe3rRJLJWAJ43Gzw6KSz1nVNG73nzqNZ5C7VEPMmF5EMDkdNzzFTEJG
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Cursedcoin
+Symbol:           Cursedcoin
+Mint:             8k2RsJCHxXtW9tdQGcjkFUq2F8i1DVQQdqEtHXxtpump
+Initial Buy:      17376518.166910 SOL
+Market Cap:       28.887030 SOL
+Bonding Curve:    F4CWHVoMPASQnNcSywGZV8CWDB3wfyGzcU5bx93KCztF
+Creator:          C3jtjZ3AXaSNJVfMwLYEXAkdRH1mhpyT5gSx4fVMEfA
+Virtual SOL:      30.493827 SOL
+Virtual Tokens:   1,055,623,482
+URI:              https://ipfs.io/ipfs/bafkreiaumtsfe7e5qwhgy3r7xmt4tzh7kldvjyfaclq7tprikngtqla734
+Signature:        N59g54exBvVfNcnZLq8dmBa7aoq1A7MWdZGX2WjmAx6vc7bFSPL1aXiVqD4zQM2wzmB4HAxPNnhFSoFZg6VEnzi
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             ayri is a pooron
+Symbol:           heyAyri
+Mint:             FZmazCgorBzpUvzvVgHPUsCMSjXwGSh8q58WhCoWWkuf
+Initial Buy:      0.000000 SOL
+Market Cap:       27.958993 SOL
+Bonding Curve:    2QSE2FRdJtunPfyxyMRkvWXQKThqWBkiYjTHgpACMq3q
+Creator:          DjTa6b2xWVpatZmYBxfMX6XKKvEAXwMcXSaDxW3uLqY8
+Virtual SOL:      30.000000 SOL
+Virtual Tokens:   1,073,000,000
+URI:              https://ipfs.io/ipfs/bafkreigavq5yctquqvcp37dpbppsfmmviqde4krzybmxrsupx4wjcanfxu
+Signature:        4DwoT1XnHSp7JxZRaiQA8dt1NyWpj5PtENiQqj6mxMFoQdDrr2hpj1fMVnHxxRSFr9A88csGxds5zJbUjTibWkF1
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Jimmyjak
+Symbol:           Jimmyjak
+Mint:             4cUep22zsnM2vMwAfjSFzuf3yETQxypzmFgzg8TDpump
+Initial Buy:      120633136.066497 SOL
+Market Cap:       35.490525 SOL
+Bonding Curve:    GcM12AFcwGScNZuXm1438cvw5dnw2Vr7ytiNtpfNiCU
+Creator:          BxpFcT9fkZwKHuvXPKcfxo6k5v28VJdzozXD2scAgsn
+Virtual SOL:      33.800000 SOL
+Virtual Tokens:   952,366,864
+URI:              https://ipfs.io/ipfs/QmQAqBNeAaSiga191cEmgDAKK8TZkN8G1wqy3DbCnzjFXc
+Signature:        5TrXxtwvmKwT1vjUer4ENzVjmvzdrfxDx9LZZiHeYNHGdCrEtqXgU34KiQX3AmSFMqK1rnA9sgjJe64N72YNdNVd
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             YN Coin
+Symbol:           YNC
+Mint:             2M6aWB617StD8ZExjLAHFMg1MP46nJ3vzfzfdFr4Skmo
+Initial Buy:      357547.484171 SOL
+Market Cap:       27.977636 SOL
+Bonding Curve:    5EL6NQrwgahnphNzC7GHrhVdZnkDAWTjqnddRuW8Xqhc
+Creator:          FjFM1fq4RYKzNYhitdoZ4XsXNX3rJzvrDQE71dRwEC6J
+Virtual SOL:      30.010000 SOL
+Virtual Tokens:   1,072,642,453
+URI:              https://metadata.j7tracker.com/metadata/d768678c76f549a6.json
+Signature:        3Dax63GvVa1ri2HdFVcCGfGG2g9Z7foLGLMb2HMgkx3wWhCo2EAkyuFJrsYFHEkUcjtYfU7jDTmyHds56PN43dBP
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Shandora
+Symbol:           Shandora
+Mint:             BRUqC5qB6MiL3kvRjEFD9jf7rYWo5krzvbTjWquYpump
+Initial Buy:      30611059.538996 SOL
+Market Cap:       29.625207 SOL
+Bonding Curve:    FTwhjpjzBun17vUBkuMj9DARJvHKq4ydLM2eg1KJPLWJ
+Creator:          4oYDVZ6c641K9JxQwywGaMhVwJTRuWjT13jcDSrvP8m6
+Virtual SOL:      30.880988 SOL
+Virtual Tokens:   1,042,388,940
+URI:              https://ipfs.io/ipfs/bafkreid4wsebvp7wcilbhqh6yxbzekc6szmsz5ddtvtwhqma6bpjerzxaq
+Signature:        3WeDa2Rx6UUuXtWD666XZmEqwcM5uxG8sNEFPDJEAoaM736dtCvANxGfp2QT3J4A6eqcFsxBLQrGGLeJ6oTNGzzp
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Never forget whyy
+Symbol:           NEVER
+Mint:             8sJqWUPGx2ckA23p6ZQ3inccKYL95jRVkMHpK7LQpump
+Initial Buy:      34612903.225806 SOL
+Market Cap:       29.853992 SOL
+Bonding Curve:    8aWcUeN9LkBkLJRhXdp2RQr8tmoQgYVwBEbRuhmnFM4o
+Creator:          EEojsfZZze4j1qsz6AefaohFaExCDLhBh8zjo2vZGERQ
+Virtual SOL:      31.000000 SOL
+Virtual Tokens:   1,038,387,097
+URI:              https://api.vortexdeployer.com/metadata/c14a9f1b-7178-479f-b131-db926d0acd9e.json
+Signature:        5zb49QPT3ZQ5Aob1RFUuoTKFDPh3qyLNYbPxNCNjkM1a9qbb7DJM47auPzwfbuWx8iB7Bo9inhfSPrMzKpZJHbDs
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Latinas for Trump
+Symbol:           LFT
+Mint:             BE4qzvvkxXXEftnWusBSTEj97BFzQ3Wdyke3W5TnYzcr
+Initial Buy:      43544915.631955 SOL
+Market Cap:       30.372782 SOL
+Creator:          2aKq19s7GJsqZFPudSwktPXLKqACSQjT9crQnSf8e6x1
+URI:              https://metadata.j7tracker.com/metadata/01d0d8f1c9994a22.json
+Signature:        P8b9QGuSaVdcFy9BG2zqvHNpZhkn5mmMTwBkngyPD6xvt39biVYQLf6i9PEMT2MkZxD4fUgWuaRYuTJugLJYBYD
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             The gu
+Symbol:           THEGU
+Mint:             EFdHjoie5DCQHHinEWMc1z7nnMPzCyw7VFwKpUdafSH5
+Initial Buy:      97545454.545454 SOL
+Market Cap:       33.830382 SOL
+Bonding Curve:    7LWA5E532q1tui5VwQ1unp1BgFDEvP79YHcBjiSvpetD
+Creator:          6izaw8jHUdohFoRDvq4XAHJxr8s8trFWz1a8JkMvExhy
+Virtual SOL:      33.000000 SOL
+Virtual Tokens:   975,454,545
+URI:              https://metadata.j7tracker.com/metadata/1adb5f39cd73493f.json
+Signature:        TCps5roneyUQhgLbQKBRu8oSnjag1vkU3eb4gEq7cNei7pysAVcAQtfh1ZSGmdtiwAMCLH4u1DZrxcSWYCrYyAH
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             ayri is a pooron
+Symbol:           heyAyri
+Mint:             8z3uowJJaPk8eUMJLfPcLjxWLWYCd1dXt1gCjL8CyxBT
+Initial Buy:      0.000000 SOL
+Market Cap:       27.958993 SOL
+Bonding Curve:    9QznuKmvz2za8Fy2CcDpAsP1jYGxsBNMQ8K3Mu29nAsb
+Creator:          DjTa6b2xWVpatZmYBxfMX6XKKvEAXwMcXSaDxW3uLqY8
+Virtual SOL:      30.000000 SOL
+Virtual Tokens:   1,073,000,000
+URI:              https://ipfs.io/ipfs/bafkreigavq5yctquqvcp37dpbppsfmmviqde4krzybmxrsupx4wjcanfxu
+Signature:        28bSdiKGF6eUeQCBU3zLqzRhBtkrSVARU6Zk49zePzK6sJENDpvUMm3XXDuuLWZPTRJq9Smrpc6P3TUbsx7zq4qm
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Art Of The Surge
+Symbol:           Surge
+Mint:             Anpr48ncYsxfTnXdHesiteyNm7ycuj5SMYUHBdwQpump
+Initial Buy:      10623762.376238 SOL
+Market Cap:       28.520969 SOL
+Bonding Curve:    Dm1vtAA4QbXAnkzAAbtcViNSyNnPA8fzMBhZai4PB8pD
+Creator:          6pAvYz2v13eczeNhMzZecPmetT5D9PZPTet7LNwUQYtP
+Virtual SOL:      30.300000 SOL
+Virtual Tokens:   1,062,376,238
+URI:              https://metadata.rapidlaunch.io/metadata/d1cdea7c-a623-46c1-bde5-4df4cb55eb48.json
+Signature:        3VHqY6VModJuVmaBXsXyKEZJjY2bsGY6wFCLkAvgbKkD2D8et7A8GNxJfnPr1V4vrK9BxqbFe9BEB3T427ggfSWj
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Jimmy
+Symbol:           Jimmy
+Mint:             ExWXhES7YWfXrA1wSHXUE752KTtKQFBnCqXsDvPFpump
+Initial Buy:      23832930.900571 SOL
+Market Cap:       29.243657 SOL
+Bonding Curve:    3ZTVMN4A9TooPRgSvovtu5MH7MSqzqE6MSy6VPWoaYic
+Creator:          9CGAVwBoHQL1qHgsyT7xACm3HF5U6ZyuRHM6upLydDyx
+Virtual SOL:      30.681481 SOL
+Virtual Tokens:   1,049,167,069
+URI:              https://ipfs.io/ipfs/bafkreieirc2ef4ls3fgosm6g55stp32idyv275wmcd7yqcaapkjayxs37a
+Signature:        2obk1nb83J45fX71QxFS7Bs1o5duuPXmcqES1z7YSsbpv8wVhK5yF1cPKLHukkhUKseKA9mqHLzwaJFpmidL3wAi
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             THE GUN
+Symbol:           GUN
+Mint:             9d1nK5mi8pxdTa6cdMiw2StkpV2vEsWucTkP1fMGpTnQ
+Initial Buy:      96105045.993641 SOL
+Market Cap:       33.728923 SOL
+Creator:          8ghYW6ftL5kUemfsoA9X37rz3ZnvyMSZRAx1kt1CxpoS
+URI:              https://ipfs.io/ipfs/QmWgtDhrZRiUikepLQCd6zvhREEPVdpzD6wfyG5DWvmXWn
+Signature:        32JKDv8Xn6k2LnYCeBcfeNcZ5Mzm8zVPpoW1hEMyn6w9TD9gVHBeCKRYBjGbYkHLd5v3L54BwAHivEC96A8ijux9
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             ICEBLASTER
+Symbol:           ICEBLASTER
+Mint:             EUZKyz4XsSahqncpEvSBFXnNVcwehxqWSJ5yVCmf5fRJ
+Initial Buy:      91350265.200292 SOL
+Market Cap:       33.402980 SOL
+Creator:          6PjmZ6PUEY5kTkZt7Pjx4i6yGRTERiUyFqAaH9NZFLmB
+URI:              https://metadata.j7tracker.com/metadata/f533ce80c459494f.json
+Signature:        5hyRtqL2aXNnzn9CW2xHrszmHiLa3kMWyay57LEm6VnywfzKKv7uDaLiGK8tod3EmsEAg6sikrQtyswMTeeowncK
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Wish to live there
+Symbol:           Walt
+Mint:             3ymRPwf5JUVgo5F1oARHnMyeHRTRLGtXb8kLVGvhpump
+Initial Buy:      10719270.000000 SOL
+Market Cap:       28.526098 SOL
+Bonding Curve:    7sWsNSzRP7VNqabGCDETL2iJ7Ws1RutLfUCBDgv7hnDa
+Creator:          Dm75LaGLbqMArbJHyLFcqP4FFLTKpRF7wLnU5WtwaHwP
+Virtual SOL:      30.302724 SOL
+Virtual Tokens:   1,062,280,730
+URI:              https://ipfs.io/ipfs/QmUHevWZnmumAstc5F3gm6MjbbTnBWvwgAx2oQECRgNNZx
+Signature:        61XsnbHLmWZnYUCpYRy5U5tNKxL7RaSrXxqjQ2AF456hWiTg2jm1qUDSkZbQwAhLEH8CvqwPYLm3WjkvMiLeefLm
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             THE GOLDEN DOLLAR COIN
+Symbol:           GDC
+Mint:             FwEt3QU4hE7nTqF8LkYBhFBB9HgZ2AjzjtC3QhUtpump
+Initial Buy:      97545454.545454 SOL
+Market Cap:       33.830382 SOL
+Bonding Curve:    8AnT2NndwfCSR2PkGU3K2FdPbmVmwpu4ooUxRK1UZusg
+Creator:          CKQVwNuFHdgcaGCuKWKxLCiyPATK87LvCmumyKF7Q6v8
+Virtual SOL:      33.000000 SOL
+Virtual Tokens:   975,454,545
+URI:              https://ipfs.io/ipfs/bafkreig36pzjepgjh2dgfahpqlydmeiab665zb5ualegskps3bev7fzhri
+Signature:        5CDi9MnTSPdTysyE7d7U9awrpwEqX25HkEBLxyRezhVxjfJcapn55vwLPf2eKxcbPXCGMpPNu2zuXxVZ36BjXoHb
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             PEW
+Symbol:           PEW
+Mint:             8PhCSTHjsZDKUg4TmMzRCFmhMitP2xKc8DEEjaHHbonk
+Initial Buy:      90908377.497277 SOL
+Market Cap:       33.372928 SOL
+Creator:          EFaQQTGywnD4CjQQvTugUiyVT4LV9G6MsWqiub8X6unN
+URI:              https://metadata.rapidlaunch.io/metadata/26e693a7-9cf2-4b9f-90fc-a3b6e079be0b.json
+Signature:        2SBuTE2FYzS8cSnzcmvrKLcFUHjdsgFBc2PRAfmadqrzhAzqGoVNonErBxecK7hvymmLYAyJABBK99DtyWoSSjH3
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             KOKIS
+Symbol:           KOKIS
+Mint:             3arHuCZEsq5CvZPqRWSRhFeUtS2u8QZNFFpNZgY1pump
+Initial Buy:      14118423.565789 SOL
+Market Cap:       28.709537 SOL
+Bonding Curve:    GSkryQ2m44YBTe4yVYyKAtQeaf136Ju6geg22Q2K1N1S
+Creator:          B8dpv8G3b5mbyeSM9XgvAMe33kyBxX5Q54ggm7oVoTWU
+Virtual SOL:      30.400000 SOL
+Virtual Tokens:   1,058,881,576
+URI:              https://ipfs.io/ipfs/bafkreicdmhypvdi3kvyqurrma424kmiddudvezsdgy55ynk72dwguvtyj4
+Signature:        4RNhTPUbEUyRVYakVCzKR5uwuyZWfyvj1vfANq8ZuiyGHuH5caK38HynekFfMeSXPr6Qq3EXshx8d3nfYNQAZ3Js
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             ICEBLASTER
+Symbol:           ICEBLASTER
+Mint:             48z31ZFuKmmvoPE5mt7eLMDxEhDP6UeUKF9iTv21bonk
+Initial Buy:      90908377.497277 SOL
+Market Cap:       33.372928 SOL
+Creator:          DdZG8dw12CsHjj2Ytfo1vKNPPoU4DEYSMSxdhPjo5U6N
+URI:              https://metadata.rapidlaunch.io/metadata/33e0033e-a5b8-418d-b35c-509d39ce837b.json
+Signature:        36tdkJHZYwGhJtjLmuYpiSeyDdgHDDsNzReJWXg4HXjg15MFT97fsV7AA2rEvbkujKEH9phb3Uo7SG95RGjFR5be
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Burger Butler Cat
+Symbol:           MILO
+Mint:             DKnmFqWXny5oqGmb2vfMZ8Z5zNH6C9u8GpvQBvQBpump
+Initial Buy:      34199203.154141 SOL
+Market Cap:       29.830218 SOL
+Bonding Curve:    92pSy53sxB2hPyj1o32k5U253T5iM4upLzabfqb9L86H
+Creator:          7NVUDcXRp5vdKonhZpfL9PyCUcF8Z8RGsuro9w2C94iC
+Virtual SOL:      30.987654 SOL
+Virtual Tokens:   1,038,800,797
+URI:              https://ipfs.io/ipfs/bafkreie7sssqvsts2q37k2xoqnstljfsi2m6xwqk2iqgf4b4odrvdsmlka
+Signature:        2H4nUF7ShW2SHoN8z2BsKC5yNK99rT1NHwBUNZmfb5NU6abCmkN6nAEq3pWBwUywCLKq7HkBuHDZJKPPDstkP692
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             robot drone dog
+Symbol:           RDD
+Mint:             6miFFFeXatkbRfuH7QtzE2EyHk35i8y2jR4sYemTh5cT
+Initial Buy:      108763479.214234 SOL
+Market Cap:       34.620295 SOL
+Creator:          6KWwZBQ99VqdbQk2yu29RSqRyRSDiftZNERj3zFfraaY
+URI:              https://metadata.j7tracker.com/metadata/927ff0dd4ea14cf5.json
+Signature:        2L4wJV8M9FbS8zA78Sm1rp3oCanCWWnCt3B2haDzuZSqLD9zauSvSXMJhzytRFpph9GTEkixp7qF5roynVwfSQUc
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             You
+Symbol:           You
+Mint:             84t3Pmx84fZCBVScA9cdpMTFbNZU2yNeVTwnEqyzpump
+Initial Buy:      33942543.576501 SOL
+Market Cap:       29.815483 SOL
+Bonding Curve:    5iyTYhsDFaiYkFD43DED4VR2LdwpJp6ErmzxxXEHpV2T
+Creator:          4hbQndVLSiTRwSmGaWUn67rVAtunrUFxjXuzzPud8iSv
+Virtual SOL:      30.980000 SOL
+Virtual Tokens:   1,039,057,456
+URI:              https://ipfs.io/ipfs/QmPqCBsxjb46b2T64F3Ha1jP7RvQeAKXxW1fopFkp5nYkv
+Signature:        4ytLjscZRgrGAYNA9Rt2Zjyi1YRB8gTh6oEKXEu6iTxJ58wz84VtdFY9fPaASEnWEDHsL1fTf6G3cZgmViwRWq6V
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Flying Robot Drone Dog
+Symbol:           FRDR
+Mint:             6mVM92pzoozHAxBV4z4j7YaetXyT7uYRnaAxUc4bonk
+Initial Buy:      107261742.089991 SOL
+Market Cap:       34.512711 SOL
+Creator:          HUgpmqL6r4Z4iEZiVuNZ6J6QnAsSZpsL8giVyVtz3QhT
+URI:              https://metadata.rapidlaunch.io/metadata/1f4223ed-6a98-46aa-adbd-9b9ef2a2ea17.json
+Signature:        2Kuvd4XLhGdypyp2qyBY2SMssWYqRLd8PD6AmcJha9egJ7C5vKhsniP3Zk1gkQ5RX8EQ3tpgHU1EqxaBVgQHdcZS
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             this community has been deleted
+Symbol:           deleted
+Mint:             8khDspKU4P8TTsB5wj64SETTZjumvYyxW892XC2vpump
+Initial Buy:      97545454.545454 SOL
+Market Cap:       33.830382 SOL
+Bonding Curve:    9595czE61PG6gNNhyHoRT82qq6UJHySEdrCpSiWeLH8h
+Creator:          CKQVwNuFHdgcaGCuKWKxLCiyPATK87LvCmumyKF7Q6v8
+Virtual SOL:      33.000000 SOL
+Virtual Tokens:   975,454,545
+URI:              https://ipfs.io/ipfs/bafkreigu4d4xdscaing2lhwvry3vgtnb3s3bqo4kux5a5jcwqabo3whqdi
+Signature:        4f4ecan84fZXqVou3dXJ4tuUU6EnMswdVyHw9ZSidrGBkpQERqmG9z5iC7JAQ1MKZ9825QYzyEReFbgr6iQqcB9t
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Penguin Pump
+Symbol:           PENGUPUMP
+Mint:             GhaUJFoMPsVRWKqWUnUszQiBVfLqT3inTXW4Zmh4pump
+Initial Buy:      41269238.115384 SOL
+Market Cap:       30.240448 SOL
+Bonding Curve:    4jX2fwWPWvYFeNcqyier3X2p2C7qtuWWKt8cHg9AjsgT
+Creator:          CpqAw2j6J5wQ3RK8Kw1LVbf1NobpDFKUxqDN1v4kyq1W
+Virtual SOL:      31.200000 SOL
+Virtual Tokens:   1,031,730,762
+URI:              https://ipfs.io/ipfs/bafkreigofhm72x7q6dlczxdpkaq55a7wgbynczctsrexrtgfcdtqp6gwlq
+Signature:        33tuEPNmwwGWFJQ7TjZx5pzqDe9SXQn9nfbDvVHffdoqDRZD4pHdNBmB12oAYiXzPe3DDFE2WXKFZyhHPxaGqUwj
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Flying Robot Drone Dog
+Symbol:           FRDD
+Mint:             F4GCRRjodNRRPpFTiCmyzmw33E3adXgJzSxjJAtdbonk
+Initial Buy:      107299684.449086 SOL
+Market Cap:       34.515423 SOL
+Creator:          GpTXmkdvrTajqkzX1fBmC4BUjSboF9dHgfnqPqj8WAc4
+URI:              https://metadata.rapidlaunch.io/metadata/ee6ad54b-94b3-4487-9747-754f5a1641ef.json
+Signature:        4RAg523iftCXnqvWLrjCa4MDCtN8HRKDjEZF8MpDz5JM9yGQqmUWKnL75GUSPgxjJdCoNeFpdRnA2oQPmB1UZsfq
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             ROBOTDRONEDOG
+Symbol:           RDD
+Mint:             8gko66B65XV8ZFcMzWSZ5MGP9z32q5sAszJ6632bonk
+Initial Buy:      74014928.562264 SOL
+Market Cap:       32.253787 SOL
+Creator:          F5Ue6NKAZwRqhHjRN3u6feLdEuuXqV2q6bhMuaB9w1Jk
+URI:              https://metadata.rapidlaunch.io/metadata/4c6b0718-02c2-4be5-a272-dec0a66089d5.json
+Signature:        4GRgWGhE4m41bcPqPrUfx3Fz64KwBxcP3XLSR4JrZSzsP1vxWyo7aX4vn6ydyLLvoiCXw86F27afFRb5TTwpQpCX
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             FLYING ROBOT DOG
+Symbol:           FRD
+Mint:             7GvGmKauMnWRtBz5xCUPRYURHPUpKexnA1jNxVULbonk
+Initial Buy:      90758786.161869 SOL
+Market Cap:       33.362764 SOL
+Creator:          C21f8iq2fYuLPjPUA2unzsXTnSSLUSsewWDvP5YqZaBY
+URI:              https://meta.uxento.io/data/a2f7d39e-ca59-475d-b920-fb187cd9e5eb
+Signature:        bwAie78MJfWiboTQJaESAaNv8hRWEespkyKuU8Q4xL4hk9wVWmL5uWtB3yKqcK2TCf2JtPuYEwK9fh5U14i365j
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             beetcoin
+Symbol:           BTC
+Mint:             7UStViQiFbBgLGzWceaiEob7N74e5MEaBQ5sSvpxpump
+Initial Buy:      34199203.154141 SOL
+Market Cap:       29.830218 SOL
+Bonding Curve:    HZLPmbJUPMer3ozTFoxL8WW6QZ3j3Ejg5qxzprNokZTu
+Creator:          Gv3y2h57Kr6nHaBLoGJrPqHSRGxAHHbaFMy8vcu1tnTf
+Virtual SOL:      30.987654 SOL
+Virtual Tokens:   1,038,800,797
+URI:              https://ipfs.io/ipfs/bafkreianak2buqvd2fcbrzffr4woouofett2u3ptm3apk53qtitejk7mve
+Signature:        5MgMdc9GwDruBzAHMVgPgtNiubnABN7r2TVU1WNEWCedVrJjym4nYPxWmZ8BRBwheQBo28uLEMBJfRzzQ8G58nHY
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Fake AF
+Symbol:           FAF
+Mint:             DPoFa4hxXMxFCJ7DG5toAM1tFXN7BCjvUuvJczpYpump
+Initial Buy:      2467071.716458 SOL
+Market Cap:       28.088006 SOL
+Bonding Curve:    FGFY6ovx6HDcXkedH4MYBP9wxRVXQtvANVrEwPWvNEQm
+Creator:          8SMpYVjcEkkDLAs1wTUp3FHFZahe4m41CDPD5aJSwA1M
+Virtual SOL:      30.069136 SOL
+Virtual Tokens:   1,070,532,928
+URI:              https://ipfs.io/ipfs/bafkreigxguncfflnpdez4bhewjmjo2gl42nugdin2z574ibfcaqnxdd76q
+Signature:        65iCBGqt8vGCvkzNBY3XuDQzx6PfzSDP6oVWkkPFoqLsBpuacdm19bR89kryaBgqV2NaJa2TvqzVsxKJHo4GC4CV
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Latinas for Trump
+Symbol:           Latinas
+Mint:             CYygJfcUwyMD41VGGhmXaM6N6D7JwstgGXtd6Vpqbonk
+Initial Buy:      73863854.060120 SOL
+Market Cap:       32.244034 SOL
+Creator:          37uM1rp8TK7eVURVRnjtaxGkdJyXjgA9uz83DjApcHvq
+URI:              https://meta.uxento.io/data/06bef112-0a73-41ac-aacd-8297c57894d6
+Signature:        462xmdsyFENiKNdKiSAye5iqLzVp6AVuK82579ZwDtVbwKMBgi95wDugDscGjwkU7kD5taZLXNNqaCqsyZCmxFXK
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Infinite Money Glitch
+Symbol:           SILVERWARE
+Mint:             FbaipDqwKv7GnPEF5V7t9Wj6FTSbLayvaFRXbKJgpump
+Initial Buy:      82538461.538462 SOL
+Market Cap:       32.812985 SOL
+Bonding Curve:    9B47wRpWYVsAZki3dhqqYFFwpumVeN37n2yihJBwd58L
+Creator:          9arivygsmQV3KkTn1XqTZLwbmXToLJa5Kuz1hmJPcCF8
+Virtual SOL:      32.500000 SOL
+Virtual Tokens:   990,461,538
+URI:              https://metadata.rapidlaunch.io/metadata/f8451096-845b-4409-be25-603446763f60.json
+Signature:        4bBp55UHeLAJJmtp94uCZYhUTToF46SWeJ6tXZni6Q52NE9B4rhx4nf173ScmFoE8zHe8TT2wgW73gteSJSXaiXL
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Flying Robot Drone Dog
+Symbol:           FRDR
+Mint:             5Ugm8CmJxcj6fqd6oP7m4Kp8gASvp8Xh3tmtzv2upump
+Initial Buy:      14634193.799488 SOL
+Market Cap:       28.737526 SOL
+Bonding Curve:    7G4euFmKVjCjH7ALnTNPnvCEYLDy9cdcqktSYSY7qHRb
+Creator:          9fCoLeLdvHxzHagUpKG5heWVZXoGmc4rcggco99CKY1W
+Virtual SOL:      30.414815 SOL
+Virtual Tokens:   1,058,365,806
+URI:              https://ipfs.io/ipfs/bafkreihnlywwxgawdsyduzk3old4ertzfvvejz225ysjvvb5cv6f6hfrlq
+Signature:        3WeeDZN59aJEP8ntpTYfKydTmxYF891ZotsCJ33c9SYRHZqETPvtUPGS4FUD3fj8p2fx2N9QYQRpJ1HSUp4jrYZ3
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             how this coin looks at you
+Symbol:           LOOKS
+Mint:             H1CrTukWtKZNcd1pE7P88LsK2fUoQsM2WXzXWkGDpump
+Initial Buy:      17590163.934427 SOL
+Market Cap:       28.898726 SOL
+Bonding Curve:    3ydKkqAWrcL6ndAjKTDKqshvddwbPFwX3uvt7ENy2iZM
+Creator:          8DgwngLMGBmJhNn9E5xCPbJt3kMkXNjpgzotU4tDXcvb
+Virtual SOL:      30.500000 SOL
+Virtual Tokens:   1,055,409,836
+URI:              https://metadata.rapidlaunch.io/metadata/eee0ee50-a678-405c-969c-8af3f4f59720.json
+Signature:        34A7UULPAy9heDfse7Cg34HJkdei6RvxhdqmfzKbtBGDgkUXqM5wGdpW8ZjD9n37ErSjNN13BNiuhbmSTnGJ2fNL
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Chicken Banana
+Symbol:           CHICBANANA
+Mint:             GuGvGfTztDGBsvjaNaC8H1P2MvXH1EwanBjGj4bbpump
+Initial Buy:      1058707.391261 SOL
+Market Cap:       28.014248 SOL
+Bonding Curve:    653NUV78zXMu5Y27WgGg4YFMpfKiZxwvwCRU9EfJYjpq
+Creator:          5XxSTcDH7HJBfdHNAooqCQgvv5bQmfsFTMR24zeCmkkD
+Virtual SOL:      30.029630 SOL
+Virtual Tokens:   1,071,941,293
+URI:              https://ipfs.io/ipfs/bafkreidvathzwpixv4h5oewfv2mwlpsl4js3l2etobri2neh76xfnpaci4
+Signature:        5URGKhxcZFJbpjD53DosNbgWdA3vnw6rehhxLrrxtdsXoucVTtkkQD9NEU45NbgUgoH768LntoEzx6R3bfvvefTP
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             yokohama
+Symbol:           yokohama
+Mint:             DGjfEsv2H8TMPeZxcCYK5ZhASojv7AM6YmKhEdDApump
+Initial Buy:      97545454.545455 SOL
+Market Cap:       33.830382 SOL
+Bonding Curve:    5W8tACeW5RACMcw7NKpchcwkJbkah5dJPyfsowqtbATT
+Creator:          HTM87R4mgjDdiF6Yfn8duK9vbDmZxiPCTRbGvm7eCAJY
+Virtual SOL:      33.000000 SOL
+Virtual Tokens:   975,454,545
+URI:              https://metadata.rapidlaunch.io/metadata/34c27c6e-b03c-42e4-8379-9aad79c60e89.json
+Signature:        4Pc1rURN6P8y2HraxAc4PvHFvSwswHhVpGdN2saBAdJrEFUwxCMHYETjpvYfdNpSaJCRYLNm1Rh5KzvjQELqJMqA
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Latinas for Trump
+Symbol:           Latinas
+Mint:             HEwMqRb86YXM2h3Cxx7arhvUgUQkstA1DFQUVcdMpump
+Initial Buy:      3532.411670 SOL
+Market Cap:       27.959178 SOL
+Bonding Curve:    G9tnWqUM94dbXS1oEQepfpypmdS54SdwnJ7soFJwVqyL
+Creator:          J5A69QPQQqxE2tgZfa8jixtwtpXwqGmKFymqB3LygX4A
+Virtual SOL:      30.000099 SOL
+Virtual Tokens:   1,072,996,468
+URI:              https://meta.uxento.io/data/0f3fe235-322e-4509-b40b-527dfce85de0
+Signature:        22k2RC5QyP5RMfiPRZSNKfX9GuGxuvWQ5d9CP2DzM7i46GUyKRtbCF2fzYSkbw3yzLcT6CPu1TDEpExvsydYsgUk
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             no pain
+Symbol:           nop
+Mint:             3MYibGRucNKCN42do8hv2XKFLxoMR1UMw7vYi2iApump
+Initial Buy:      1057648.683869 SOL
+Market Cap:       28.014193 SOL
+Bonding Curve:    2rM1VLjDKXcfshQ9UG3xqpZ5UGczYSBvBBFGkPSYwL16
+Creator:          8Xe5N4KF8PPtBvY9JvPBxiMv4zkzQ4RmMetgNuJRDXzR
+Virtual SOL:      30.029600 SOL
+Virtual Tokens:   1,071,942,351
+URI:              https://ipfs.io/ipfs/QmQmY8MyP3oHdC4ELTxByTfap3RHbZciXTUTrLZmsKJFzK
+Signature:        4b5NBs4hxuCADiyEwKQHrktxEZUKzndG11VMx3qpnTXsXNuRj5ECEmuhGtvX8DSzUSC4NkDEvSpgyCg4uHjuWhLH
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             YN Coin
+Symbol:           yncoin
+Mint:             4L5oMYvNfrbjysbLQJqMsCsHt3qVwnzg5UPTRtgaXHHL
+Initial Buy:      357547.484171 SOL
+Market Cap:       27.977636 SOL
+Bonding Curve:    BTLctEJiF9BEEMYRxWYW1nMe6QFq7Gn3eLzv9wseBiSF
+Creator:          FjFM1fq4RYKzNYhitdoZ4XsXNX3rJzvrDQE71dRwEC6J
+Virtual SOL:      30.010000 SOL
+Virtual Tokens:   1,072,642,453
+URI:              https://metadata.j7tracker.com/metadata/dbbbd5297528422b.json
+Signature:        3eQrigWr7zAkgKjrTQQz4S3efjHoTGD3yfcmdj69JvPoMaywDMK7m3dJECRBQ2cgW5mSCSCUr5aVHcNvpX7RFESW
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Tiktok
+Symbol:           TTK
+Mint:             jCwMFUgV8cJYupyLPCK24N6CWauwVvwsdfGKd4apump
+Initial Buy:      1788384.000000 SOL
+Market Cap:       28.052426 SOL
+Bonding Curve:    6EG8583FYCxfQpFo8xPNDnSVQ5gmF5RVHdLwMUt6C95H
+Creator:          69xEfmTq12Wods2obfEwKqLcvoNKfF6ZddyrS4Heth83
+Virtual SOL:      30.050085 SOL
+Virtual Tokens:   1,071,211,616
+URI:              https://ipfs.io/ipfs/bafkreiaekg5odeqhhb2cx54vfjhort32lpn4emzr6faaunumtdcdxspu3q
+Signature:        3PZLAuegAyCe7otEX9SoiQ5HXe7RJy5G4enPbwZLo6KF2KB9Ub4rBMpDvzeLpNa1ghgEPgCWgvzVL2f8k9DfBFPb
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Cute Puppy Utility
+Symbol:           CPU
+Mint:             6P3PUMEh6FWCSHMPuqNpY1npJQbuKDirEiMQC8y8X6Hv
+Initial Buy:      14118421.052631 SOL
+Market Cap:       28.709537 SOL
+Bonding Curve:    FqU5RVJtncU65DJhV5zbLyXRppoquXuZRje1GAoYULWQ
+Creator:          82WYqwUycXxpVvPx65tBPXpmMB8KGSxDMSz6hFBsoBQH
+Virtual SOL:      30.400000 SOL
+Virtual Tokens:   1,058,881,579
+URI:              https://metadata.j7tracker.com/metadata/1ed63b2343974852.json
+Signature:        3757E57WZ6cJmicNv1pG4KujQ4pS7MvNe3YAKSWP7eQ7Fjwsoyb27DReJyCX5zoh1oFxbieixV4SnwmX6niyKbRV
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Robot Drone Dog
+Symbol:           RDD
+Mint:             BXJKrAWJhFQyujaH9S9GppdVzu8HFaLtRPTfRQ3igJrM
+Initial Buy:      83693432.154460 SOL
+Market Cap:       32.887943 SOL
+Creator:          7kGAXsa7n1qN2FuNoJAGmzebmN9KqqLAHcwj7gvoekKk
+URI:              https://metadata.j7tracker.com/metadata/249c07c0b1af4bd5.json
+Signature:        5voQY7LpSRyfRB1FuKoaFhzJ68Pkn3Hja9csoQr1Xq4T6cdHUMQcQqcpXSXbpkGbxCKV3sQzKk1Ya19HsV7aj51M
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Oscar The Grouch
+Symbol:           OSCAR
+Mint:             G7W1KgTEiuuDoQWMfAkTMGAddXc9swPxLmmZQnJgpump
+Initial Buy:      96449438.144093 SOL
+Market Cap:       33.754487 SOL
+Bonding Curve:    GXjsqxsupDXyeF7A6bVfkcSt5ZzYme5afd4fjTzFNeWM
+Creator:          GAodqVg6S6T3RNQQs6dXUZvYoFR874XyDmbonMhA83A6
+Virtual SOL:      32.962963 SOL
+Virtual Tokens:   976,550,562
+URI:              https://ipfs.io/ipfs/bafkreigrs5kmy7c6w32g7dza6vinmrulsww3u43mw7ulixjq6so7fbxcdm
+Signature:        3fJsPNmyfLtppPCvsh4KWLZFonwshGrpwyyXkqgvAo73xeFD78fTGULJVS4JQzKXxrUxrRLXfj3ZUBGMrYfBK9eT
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Venture Capital
+Symbol:           VC
+Mint:             4A9vtyMYLhmFGCZEs2oT4qmNcC3MJedXkmFL4XmXsurg
+Initial Buy:      49601662.004428 SOL
+Market Cap:       30.733345 SOL
+Creator:          9WGL7MUZ5WCqZaivefbzFzAmcGtXwTxp69H59acy4VvM
+URI:              https://ipfs.io/ipfs/QmNgwG3UPyQ3Lz93tNXa4moRYzeFCVvKKFLMaRx5mem8bm
+Signature:        4eYvDzeLSoWEm2PUWYCXTTTzCfTt1yGkJXASbn7cQN6siEsAvydESK6GcUYQQnstBzm27fLbQLPhznRnYY1xQENr
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Jimmy
+Symbol:           Jimmy
+Mint:             YmedAHwMTNmmAVx4shBPZyzwqYNF9YLcg6HWWGrVRTF
+Initial Buy:      51095238.095238 SOL
+Market Cap:       30.824790 SOL
+Bonding Curve:    GDhFeqmhx9bi89Sds5Sjm99mhupBEfKRQdRjQZCoWRWk
+Creator:          9qpv12dkHVCCh6z8AAV8cBwmjnQysYbTQ7VmBZaTFoYd
+Virtual SOL:      31.500000 SOL
+Virtual Tokens:   1,021,904,762
+URI:              https://metadata.j7tracker.com/metadata/54ea5539c2ed455b.json
+Signature:        4kWbRtnHhFbbhgbxiUxpFGbPHZbxBMrJT96pJENkg1yEPNvfE99Mxf3twu9moCX7o9yHFzwbm5SL5nLnx79L6P5M
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:              Natively App
+Symbol:           Natively
+Mint:             GZao7PofY8bAZNYvaKUiesAEbZAwNApu1wfHf8gJsurg
+Initial Buy:      204281741.181589 SOL
+Market Cap:       42.651811 SOL
+Creator:          gjazR8qmPT7c6f1cZ7XMpHzFd8mfa7MB8X1ZpFyFNbM
+URI:              https://ipfs.io/ipfs/QmZBx1nwXRVJJPST3eXmunkWHLNVoP8Sf9ju96uHYTwY2G
+Signature:        P1HFGXBS7HSkFKwpsM1AdyFEQXbn53CMhACCmaWxU7otEvWzREUZ8yxbRV7Jiug26xnmzFays3mWGqrJG7RN7nx
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Nipah virus
+Symbol:           nipah
+Mint:             H73z7z238VwWHLQeFecUMs1gHV6GiB9bPgXRoqcpump
+Initial Buy:      30877697.777999 SOL
+Market Cap:       29.640368 SOL
+Bonding Curve:    ALaqR3EBPT3a5x2kFKeSAoKhu4vDAUwjTEaLyUdm41iF
+Creator:          GK6RkG8AT7BuUcZ5u9y8fSYVrE3WTbhTRGQf4GPqpAjt
+Virtual SOL:      30.888889 SOL
+Virtual Tokens:   1,042,122,302
+URI:              https://ipfs.io/ipfs/bafkreifs2qemjduvd5by6loh33oexdnjm3r6wptkhdrgltapj5tuk6s3a4
+Signature:        3WtRf59CUaazHiS6vRxR7yLRKBaGKSwGnhWXEELD7BUfkA25CrXKCRK4mbLBUT2NQq3vWixUu9EC2dMD3eTMADKM
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Caroline leavitt
+Symbol:           CAROLINE 
+Mint:             BpamAXVr1Kf8K1qjXyw1UzCi485GXFjQaNhneJuXpump
+Initial Buy:      17376518.166910 SOL
+Market Cap:       28.887030 SOL
+Bonding Curve:    AbTYx3GPcfj5Hk5bTsahYt8eLFBWFXtwSQEL42HSBDq8
+Creator:          TWP2iZgHA7W4yXjCp22pdTZ8yxhZHpnXsAd2StVaZ8r
+Virtual SOL:      30.493827 SOL
+Virtual Tokens:   1,055,623,482
+URI:              https://ipfs.io/ipfs/bafkreievrkmzzqku6yoneql7odndctl5y2sdacgqizgktj6iruhnpwgvnq
+Signature:        52CyjFf7xDHpo5JAG8Kx5KtarmiaiTJDSoPKEvtwGNYqkcuG4bgizDQYx8PZ475w3Ak8ydS7FnWht4c1R59Rvcdf
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Booty for Trump
+Symbol:           Booty
+Mint:             FCM9fuogA6W3WfQdG6jWqiHZdv6pZnDQs2eoxmUMpump
+Initial Buy:      3387107.457396 SOL
+Market Cap:       28.136347 SOL
+Bonding Curve:    3Dg4mgiZuWWkpgvcM4HJZpR8hh3reMtphjw1fTAJd7WE
+Creator:          45MUS5JAiQ5tVfePvN9dmMu5u2wkRihASLG5xSLUqBwi
+Virtual SOL:      30.095000 SOL
+Virtual Tokens:   1,069,612,893
+URI:              https://ipfs.io/ipfs/QmNWNFSAzjxejHK5a2xEnfAgi3bNLD2nQjJqXJMexHPhr1
+Signature:        33WH6fBp3tDLoy27D1J2FQnNXZQ7Ai3uW6ZbGe6577ndFudFpaDWPvkFWpo7vZp5KjnySVseRZwds1hJokbNBcFK
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Flying Robot Drone Dog
+Symbol:           FRDR
+Mint:             ChiJ2bjdRqUJx3yt46oiNmx9qzaANb99atWepjurpump
+Initial Buy:      13946385.004194 SOL
+Market Cap:       28.700211 SOL
+Bonding Curve:    myvykgJSEoduTLbDYortXuLvbLy3NgssEfPnRJS61KE
+Creator:          C74VA6HJNkP56pw9AFExuXECp3n3cC7DgsKiv3XPgqaa
+Virtual SOL:      30.395062 SOL
+Virtual Tokens:   1,059,053,615
+URI:              https://ipfs.io/ipfs/bafkreieg6z64yfqexpw5546vcgtxseizpbhjiueakb2apwsiqtethy7gfm
+Signature:        HYjg634Txhb54uyiheqXGChBVWfD1neb9zQicgcSihJ2xud6C2MxwHoXe7SAJoKD4LUj8ZRupcMowkCZ6bY2WLL
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             MONEY
+Symbol:           MNY
+Mint:             EbnN7LFYycaQeaP4CdPV6AjDR8E5P9HXKXRssj5mpump
+Initial Buy:      8750424.445966 SOL
+Market Cap:       28.420650 SOL
+Bonding Curve:    DXn7N7oFo7arsZ91tn9vte7CcpKCSGUyKmo7rC51nkxK
+Creator:          HGuony9rNTGpyyx5ELPK7DwHcUQkAwAECpaWEUGzCqkC
+Virtual SOL:      30.246665 SOL
+Virtual Tokens:   1,064,249,576
+URI:              https://ipfs.io/ipfs/QmcV7JxGSns664F9zsZQFn162uS4qKSbu5XR3YTUi2mcG8
+Signature:        5SoZ74LN91zDKU3g9D5uWPY6cT48wjpmWUrNsbFA7FXB4dnR2XCic4RNfKZJcusof9svYJu98mKAt2yUeAcPnbn5
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Flying Robot Drone Dog
+Symbol:           FRDR
+Mint:             AV659jwXNkArUFK4xkkT2WSy9wDnwuTwYMaJrzwMZEHz
+Initial Buy:      16724364.198316 SOL
+Market Cap:       28.851371 SOL
+Bonding Curve:    CRtuW5CW3chX3ut4V636FAUkR1TmJ4f2hDrQAVRCYRAk
+Creator:          DRQ1bUynsgT7z6F3mBMHbauun16zY6yw6azPYcZjRBEY
+Virtual SOL:      30.475000 SOL
+Virtual Tokens:   1,056,275,636
+URI:              https://ipfs.io/ipfs/Qme1v8rnLzu4yztfZpvWakvaCmqGNdfB2LE7Gv53TauHeT
+Signature:        5oXWuqxQEnG3XHtERb51xGopTxVaKgnYekCAkukhoPbbCBrLdCkhrGVnmFMEvte5Vd94MVpewUHC7wLLs8TB7dBe
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Flying Robot Drone Dog
+Symbol:           FRDR
+Mint:             93wk8NMZ4iazdXZquwb7JRxhoqXv5nduzNxbdGMhbonk
+Initial Buy:      107246564.306006 SOL
+Market Cap:       34.511626 SOL
+Creator:          HTM87R4mgjDdiF6Yfn8duK9vbDmZxiPCTRbGvm7eCAJY
+URI:              https://metadata.rapidlaunch.io/metadata/d490afa3-433c-4104-8d5e-2dc1e624a745.json
+Signature:        2ekM9igC3nasoPWCS21opDVD9D4uWX8VjaBtVkhEf682aftFf8mboHbmBdnPEa7UmkP6iJTTFZwKFand4ykJiopC
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             CIPHERHOMER
+Symbol:           #CYPHERHOM
+Mint:             FZwRLVVKs9fpqQxeQj35mFyd2mAdMKb5YMEieqC5pump
+Initial Buy:      10493887.485100 SOL
+Market Cap:       28.513997 SOL
+Bonding Curve:    Fk4vKv4tHYqmfvgdZumB9Z1jK3wvKs6DZbpuGg8epGes
+Creator:          zcuhQxYKg89iayMa9kZKXf8mayzRbGkktSdUEsq85QS
+Virtual SOL:      30.296296 SOL
+Virtual Tokens:   1,062,506,113
+URI:              https://ipfs.io/ipfs/bafkreigwt34kzy6r37z5dsd34c67izx3q7qehzpgrhmfclk7wiyue3nf5i
+Signature:        5vLntW2ZHnPyR43b67VVeefyCxboV5FnNF2cXMbmXybaFq9chrje86kCPyqR2m8E5UTvPTpm5oUJcRC8TkSKDHiV
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             PENGUIN X POKEMON
+Symbol:           PIPLUP
+Mint:             9f5QZofT3HvHjMTkDEqM7ZMCPFP6M61m1HdrM6hWpump
+Initial Buy:      30210846.214968 SOL
+Market Cap:       29.602471 SOL
+Bonding Curve:    FfmCg9PTY7GUujKHfRdzv88twijLYK5Lscrf9bq7XV1L
+Creator:          FzCKPpBaJ3XtM5LoKmDkkBPPGFyu4MmRUW2ZN1yUMAfv
+Virtual SOL:      30.869136 SOL
+Virtual Tokens:   1,042,789,154
+URI:              https://ipfs.io/ipfs/bafkreibe6uqyr3k4x63o6mmiihvx6dndkincgt2ckwty25ty3hik6dkw5y
+Signature:        5oeY15Ky5vjYpopfwKessmMd4DpxGays9ZtfC1FVKU2VjnGkp3W1DheGQPdpuP3Bj5BAqHWbTRuk5Q66cmvWTq8v
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Justice for Roland
+Symbol:           Roland
+Mint:             9HRfAXzWjLszeyF4EgSQ4eSHRU1oYdUAWQctyeybpump
+Initial Buy:      34612903.225807 SOL
+Market Cap:       29.853992 SOL
+Bonding Curve:    FK5MjEBcdBx1yP2gnumeEJbQ3dimpicKriUgBqBzHwpK
+Creator:          HqvEYQ3dEtroiU5kAoKqiQ9mJutcRTkjAAh4HPecnmAf
+Virtual SOL:      31.000000 SOL
+Virtual Tokens:   1,038,387,097
+URI:              https://metadata.rapidlaunch.io/metadata/82281133-bcac-491e-8ecb-b977d7052953.json
+Signature:        59zdJn26tjrG1xFVR2KxVq5CLwC6QVQRFe9fFEdpqJNCFqkwzTTS5fLfQZbkyYYVSxKaMUev8RCdbDP29BtmTtMh
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             PennyWolf
+Symbol:           PENNYWOLF
+Mint:             7L76fn41Jpwjs2Ry6xURmBzQ6TweLo1WAtGfoakGpump
+Initial Buy:      1788384.000000 SOL
+Market Cap:       28.052426 SOL
+Bonding Curve:    EwAkMF32CMxMPGZYSDU6iUvcA2JHfkcX58RuAnmuGwZz
+Creator:          7ttssvHBVLgkaLFAj1uPE2ziJNCa4ATNVtsmBV4RWx7Y
+Virtual SOL:      30.050085 SOL
+Virtual Tokens:   1,071,211,616
+URI:              https://ipfs.io/ipfs/bafkreie2unqc4pnay73dkd7wfzvnmvqqxq7nshgqudbdkxmmmr3nln2t3q
+Signature:        3QEHM39F4H5uDcN4SH9bZVTKhB617amzpxM2g3hQaKCNv9DSeUfaM6aRgRzhCAfoP4tCGxskrx4N1M6QGZLexi5K
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             CHILL JAMAL
+Symbol:           JAMAL
+Mint:             EU6N34x61CNC6qKY5ZRNxiYjCoS2TqbVFDKGa5f2pump
+Initial Buy:      3517397.828101 SOL
+Market Cap:       28.143203 SOL
+Bonding Curve:    7QU5JCCEBESA22GJYAbMF96VrMZTCYmqbGZFE779nEnN
+Creator:          94mwo9RFiU33X43UiPzRaQUFELEFAjF55PzE6wpRrpfS
+Virtual SOL:      30.098666 SOL
+Virtual Tokens:   1,069,482,602
+URI:              https://ipfs.io/ipfs/QmNNR68XQFRzSjoYgN7oiLX134gYHpUbENAAPSwfRzwrq6
+Signature:        3oixPYHbzEdbv2tpFiYMiEVPj3ibjTHx4xiA4c6cQ8kXkp1PLo8pthQFvCPzLqr8j9Ar6WP9woMTGwGhDho5j7Rq
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Wabi the farting dog
+Symbol:           Wabi
+Mint:             4Bfa1fjhY38WY21XKt9s5XEpnvmqw6LWj8wfvoGW1UYL
+Initial Buy:      35765.474484 SOL
+Market Cap:       27.960857 SOL
+Bonding Curve:    DtdorHTdWrvcysM3t3tV36e979GJk4qokJTZ2dumNTWe
+Creator:          82azaxU2fa6mzhYmC7RPjWtmPHjSpmMEbcWNGGiCMeN9
+Virtual SOL:      30.001000 SOL
+Virtual Tokens:   1,072,964,235
+URI:              https://metadata.j7tracker.com/metadata/387d98daecfa477f.json
+Signature:        UFDXix16Hf8mQzspcJgysorNptnsyxkLmA37iKyrLg86bmUtYidmnhe9JSZJGgfrKJ1eKed7ZBNYJYHdBg4v2Lw
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             5% supply sent to Cobie
+Symbol:           TOILETRIES
+Mint:             7dmDY8rkq8qDCxuAuQ7koeLGUs3wc2e2avoojaHepump
+Initial Buy:      35323.892708 SOL
+Market Cap:       27.960834 SOL
+Bonding Curve:    6mP3mMtNiG1WmryxN4vaZNJsQJkNLVW358DbTDSgonEF
+Creator:          9k7n6mMY7rrabkqS8uk9mRLCyM2MMtRXu6BkyxEaGBMs
+Virtual SOL:      30.000988 SOL
+Virtual Tokens:   1,072,964,676
+URI:              https://ipfs.io/ipfs/bafkreigo4dj6skfumkl2lr326mfbpe7frdw5msfbd2ug4l3ufarrnitkey
+Signature:        2xb6UVpaXZDonVT96fHroaN7HRHLBZCoDpHsWVenr8mGPHbaWaKTMzjCX5SaK2c9ARKEjqMasvp5S9KZjJFR5yA6
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Flying Robot Drone Dog
+Symbol:           FRDD
+Mint:             6y3cXSk2mMFJQwsLEYLXaXpTmL9vsTJQ9y5bSFyAbonk
+Initial Buy:      73977016.039800 SOL
+Market Cap:       32.251339 SOL
+Creator:          H1dXZFH4aTC7tPCxtNKXtmr5Tfjgjm8Wa8EPuQKy2C8F
+URI:              https://metadata.rapidlaunch.io/metadata/b550564f-bda5-467f-a3a1-6e4c7adfe6e0.json
+Signature:        5PyVGfTtWZo3VU6UwUcafkQazPpCnREPS7M5bFeUfMAu8Uo8caanscyb6oRQ7sz5YhvvgYo7LT7nywrRY65nQwyS
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Nigggggggg
+Symbol:           Nigggg
+Mint:             GVHqxoiN5WfYeucfpMHR3JfatCBcPyp4KbQSnXxAghBC
+Initial Buy:      83693432.154460 SOL
+Market Cap:       32.887943 SOL
+Creator:          9Zu8AigeXgFAajBTni2VWw6Wmz7XxDqHmY5nQwdCWAyY
+URI:              https://metadata.j7tracker.com/metadata/56622e2638ae4eef.json
+Signature:        3qtTzdt3eWZBypftZZ316bnfffX28t7rn4soP3gTWnL3q4rjKHiMCPQpGDFsPYgabesjwyfDtZnd119VEVWE5sJT
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             123
+Symbol:           123
+Mint:             53rqXkwrxeDgm8WGRdx94ppUhShQ5kUgjZ5RZCVxKTAP
+Initial Buy:      32586459.911972 SOL
+Market Cap:       29.736347 SOL
+Creator:          QxickY6eohYU7a6rYdwUnjr2cojKFiYYUZKNAbX4Ezt
+URI:              https://mwgy.us/m/vai9.json
+Signature:        3ShcSZFPeCR1u3kQ3ppFTibGv91SwwbGw6gcFBFRiUqtFAXqAFRiSxfruMFvo5V2qdmLhKD376Pha1R6NbsDSeue
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             404 Not Found
+Symbol:           404
+Mint:             2KCLjfZj6zjEEu5adCfbH3XgZDiCLGtUXex8MkWfpump
+Initial Buy:      112104477.611941 SOL
+Market Cap:       34.863312 SOL
+Bonding Curve:    65DkGuqChfvdrKMCbDhgsUw8pvuEe1ESvuKch8vyz1up
+Creator:          BqmqwR9biwmEBPjS85q6YuRE9VMD5eEAPUdKt2w8kTvX
+Virtual SOL:      33.500000 SOL
+Virtual Tokens:   960,895,522
+URI:              https://metadata.rapidlaunch.io/metadata/029222ac-4738-4063-a62d-935fafc37c7b.json
+Signature:        2Vw3VrEXGSbWi1RXmNqweg3WcFqa1hAeQhLALXf4nuEHc3sAR62FUPnXZ2cpFUD4bKnCUN8Gig4sHt56uD71u9Y3
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Solda
+Symbol:           Solda
+Mint:             2MQbwXjTr5VF4Ubz2erQjgSDn712CuXZsuyQKYHQpump
+Initial Buy:      7018806.171954 SOL
+Market Cap:       28.328390 SOL
+Bonding Curve:    5Bdx3tAbGocQSH5TbEQfWHudUtGXmbXtJpRJfu78TaTR
+Creator:          FKvB8w3NzKS2uixdmbbQ2qJhxPFka4fi4teKBVeaPcTa
+Virtual SOL:      30.197531 SOL
+Virtual Tokens:   1,065,981,194
+URI:              https://ipfs.io/ipfs/bafkreiaw262bjmdpovhh6ozst5ofp7bsfl45gomc2pr35fpuj3f5roeeoi
+Signature:        41ZxR2wEGDz5CuxfXdSTgSYMZDaTC86tfRJUriKNCSW3K4xsyKDr5AF9x4EjxLwVXda4DfAki6uigkbzb872Jnx9
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Forge
+Symbol:           Forge
+Mint:             HEKvVL2gpAgvEg3q543RFVWC2x7o18PJoNqWqTVvpump
+Initial Buy:      44037884.724936 SOL
+Market Cap:       30.403404 SOL
+Bonding Curve:    8Hpp4gyruUVefTUozaPwy4XGWxeDEhXz1XTEJHwfeZ3R
+Creator:          Di1sWg6T8Begb2Nk1kzNFnF6eFDHDLRc1mWsztkaTdxv
+Virtual SOL:      31.283951 SOL
+Virtual Tokens:   1,028,962,115
+URI:              https://ipfs.io/ipfs/bafkreifjvpselumqzloo4dqflzli6cmb23unujn25bkauwm47v7obojzba
+Signature:        3BYs4v738fN9fGQ3jJf6JY7QWKDfcmT3CYabNT8WinemvECt8dSspJerSLb3DKhN4SGGK2xeCmpGUYz2SYfNJcEm
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Wojak Chad
+Symbol:           CHAD
+Mint:             BwyLCh7LZHYwTpjM3pCxfNHSFU1EnxTLEFns816Tpump
+Initial Buy:      34199203.154141 SOL
+Market Cap:       29.830218 SOL
+Bonding Curve:    FoZVotmYeRV8WWTrRXkDphukXNttLKbLqxZKsaQFcXAW
+Creator:          5mmbgj3Qhkbs1ghm5NBNy8GbxQqy8daJetoRT9K5Uueg
+Virtual SOL:      30.987654 SOL
+Virtual Tokens:   1,038,800,797
+URI:              https://ipfs.io/ipfs/bafkreidpzlf3vgnqm4o6fek5lvxmtrtvaqwx5fsrsq55chvgt7irxtjnru
+Signature:        3KxUFnRPKJRPfNzzScs9jD32wFmW5amP87BNtrpUiecsLweDDVCx7rAmQEb2Qd1MBW4SDT3sJS64tcVCQHcYQZRm
+================================================================================
+
+================================================================================
+🎯 NEW TOKEN DETECTED (via PumpPortal)
+================================================================================
+Name:             Nigggggggg
+Symbol:           Nigggg
+Mint:             GtBPW4JpH6yZrfDUej4ETCr8jfa5Wipp63gLpjpsHZXk
+Initial Buy:      83693432.154460 SOL
+Market Cap:       32.887943 SOL
+Creator:          9Zu8AigeXgFAajBTni2VWw6Wmz7XxDqHmY5nQwdCWAyY
+URI:              https://metadata.j7tracker.com/metadata/4a2986db2f2d42a0.json
+Signature:        67n2KH5fhe4fpJnvzRRhceujKp3JszUEAAmpxv3QzUbsbQ8qweVoR82j6UozpzvhqwQ8rgB9PrqLvWRaYE1jzENr
+================================================================================
