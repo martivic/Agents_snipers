@@ -1,0 +1,78 @@
+# Single-token feed config (set match_string to the target token name/symbol).
+# Note: current listeners only filter by name/symbol, not mint.
+
+name: "bot-sniper-9-twitter"
+env_file: ".env"
+rpc_endpoint: "${SOLANA_NODE_RPC_ENDPOINT}"
+wss_endpoint: "${SOLANA_NODE_WSS_ENDPOINT}"
+private_key: "${SOLANA_PRIVATE_KEY}"
+
+enabled: false # Enable only for Task 10 runs
+separate_process: true
+
+# Options: "pump_fun" (default), "lets_bonk"
+platform: "pump_fun"
+
+geyser:
+  endpoint: "${GEYSER_ENDPOINT}"
+  api_token: "${GEYSER_API_TOKEN}"
+  auth_type: "basic"
+
+trade:
+  buy_amount: 0.002
+  buy_slippage: 0.2
+  sell_slippage: 0.4
+
+  exit_strategy: "tp_sl"
+  take_profit_percentage: 0.40
+  stop_loss_percentage: 0.05
+  max_hold_time: 90
+  price_check_interval: 3
+  partial_take_profit_percentage: 0.25
+  partial_sell_fraction: 0.40
+  runner_take_profit_percentage: 1.00
+  move_stop_to_breakeven: true
+
+  extreme_fast_mode: false
+  extreme_fast_token_amount: 20
+
+priority_fees:
+  enable_dynamic: false
+  enable_fixed: true
+  fixed_amount: 0
+  extra_percentage: 0.0
+  hard_cap: 0
+
+compute_units:
+  account_data_size: 64_000_000
+
+filters:
+  match_string: null # Set to target token name/symbol for feed runs
+  bro_address: null
+  listener_type: "blocks"
+  max_token_age: 90.0
+  #max_top_holder_pct: 90.0
+  skip_token2022: false
+  marry_mode: false
+  yolo_mode: false
+  twitter_notes_path: null
+  twitter_prebuy_enabled: true
+  twitter_window_seconds: 10
+  twitter_min_hits: 1
+  twitter_allow_on_error: true
+  twitter_max_results: 10
+  twitter_query_template: "(\"{name}\" OR \"#{symbol_tag}\")"
+
+retries:
+  max_attempts: 2
+  wait_after_creation: 30
+  wait_after_buy: 90
+  wait_before_new_token: 10
+
+cleanup:
+  mode: "post_session"
+  force_close_with_burn: false
+  with_priority_fee: false
+
+node:
+  max_rps: 25
